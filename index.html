@@ -12,19 +12,19 @@
     .eyebrow{color:var(--green);font-size:13px;font-weight:900;text-transform:uppercase;letter-spacing:.08em}h1{font-size:clamp(42px,7vw,86px);line-height:.96;margin:0}h2{font-size:clamp(28px,4vw,48px);line-height:1.08;margin:0 0 16px}h3{margin:0 0 10px}
     p{color:var(--muted);line-height:1.65}.lead{font-size:19px;max-width:760px}.btn{display:inline-flex;min-height:44px;align-items:center;justify-content:center;padding:0 18px;border:1px solid var(--line);border-radius:8px;text-decoration:none;font-weight:850}.primary{background:var(--accent);border-color:var(--accent);color:#151515}.secondary{background:#171b1e}.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
     .panel,.card,.input,.results{background:var(--panel);border:1px solid var(--line);border-radius:8px}.panel{padding:22px}.signal{padding:13px 0;border-bottom:1px solid var(--line);color:#d9e0dc}.signal:last-child{border:0}.signal span{color:var(--green);font-family:Consolas,monospace;margin-right:8px}
-    section{padding:60px 6vw;border-top:1px solid var(--line)}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.card{padding:22px}.tool{display:grid;grid-template-columns:minmax(0,1fr)320px;gap:16px}.input{padding:16px}.settings{display:grid;gap:12px;align-content:start}textarea,input,select{width:100%;margin-top:10px;border:1px solid var(--line);border-radius:8px;background:#0f1113;color:var(--text);font:inherit}textarea{min-height:310px;padding:14px;line-height:1.55}input,select{height:42px;padding:0 12px}.results{margin-top:16px;padding:20px;min-height:120px}.metricrow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.metric{background:#22282c;border:1px solid var(--line);border-radius:8px;padding:12px}.metric strong{display:block;font-size:28px;color:var(--accent)}.finding{padding:14px 0;border-top:1px solid var(--line)}.script{padding:13px;background:#0f1113;border:1px solid var(--line);border-radius:8px;color:#e6ece9;line-height:1.6}.locked{margin-top:14px;padding:14px;border:1px solid rgba(242,193,78,.5);border-radius:8px;background:rgba(242,193,78,.1)}
+    section{padding:60px 6vw;border-top:1px solid var(--line)}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.card{padding:22px}.tool{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:16px}.input{padding:16px}.settings{display:grid;gap:12px;align-content:start}textarea,input,select{width:100%;margin-top:10px;border:1px solid var(--line);border-radius:8px;background:#0f1113;color:var(--text);font:inherit}textarea{min-height:310px;padding:14px;line-height:1.55}input,select{height:42px;padding:0 12px}.results{margin-top:16px;padding:20px;min-height:120px}.metricrow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.metric{background:#22282c;border:1px solid var(--line);border-radius:8px;padding:12px}.metric strong{display:block;font-size:28px;color:var(--accent)}.finding{padding:14px 0;border-top:1px solid var(--line)}.script{padding:13px;background:#0f1113;border:1px solid var(--line);border-radius:8px;color:#e6ece9;line-height:1.6}.locked,.offer{margin-top:14px;padding:14px;border:1px solid rgba(242,193,78,.5);border-radius:8px;background:rgba(242,193,78,.1)}.price{color:var(--accent);font-size:34px;font-weight:900;margin:0 0 8px}.small{font-size:14px}
     footer{padding:30px 6vw;color:var(--muted);border-top:1px solid var(--line)}@media(max-width:900px){.hero,.grid,.tool,.metricrow{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
-  <header class="top"><div class="brand">LeadLeak Detector</div><a class="btn secondary" href="https://ko-fi.com/leadleakdetector">Pay $9 report</a></header>
+  <header class="top"><div class="brand">LeadLeak Detector</div><a class="btn secondary" href="https://ko-fi.com/leadleakdetector">Pay $5 quick audit</a></header>
   <main>
     <section class="hero">
       <div>
         <p class="eyebrow">For inbox-led businesses</p>
         <h1>Find the buyers hiding in yesterday's chats.</h1>
         <p class="lead">Paste an anonymized WhatsApp, SMS, email, WeChat, or DM conversation. The browser-only scan flags people who asked about price, booking, availability, deposit, or payment but never got a clean next step.</p>
-        <div class="actions"><a class="btn primary" href="#scan">Run free scan</a><a class="btn secondary" href="https://ko-fi.com/leadleakdetector">Full report $9</a></div>
+        <div class="actions"><a class="btn primary" href="#scan">Run free scan</a><a class="btn secondary" href="https://ko-fi.com/leadleakdetector">$5 quick audit</a></div>
       </div>
       <aside class="panel">
         <h3>Common revenue leaks</h3>
@@ -58,7 +58,29 @@
         </aside>
       </div>
       <div id="results" class="results">Your missed-lead scan will appear here.</div>
-      <div class="locked"><strong>Free scan shows the top 3.</strong> The $9 full report adds the complete queue, reason codes, recovery messages, and a follow-up tracker. <a href="https://ko-fi.com/leadleakdetector">Pay on Ko-fi</a>.</div>
+      <div class="locked"><strong>Free scan shows the top 3.</strong> The paid audit adds more detail, sharper recovery messages, and a follow-up tracker. <a href="https://ko-fi.com/leadleakdetector">Pay on Ko-fi</a>.</div>
+    </section>
+    <section>
+      <h2>Get a human-enhanced audit</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Quick Audit</h3>
+          <p class="price">$5</p>
+          <p>Best for the first test. Send one anonymized chat sample after payment. You get the top missed leads, why they matter, and recovery messages.</p>
+          <a class="btn primary" href="https://ko-fi.com/leadleakdetector">Pay $5 on Ko-fi</a>
+        </article>
+        <article class="card">
+          <h3>Full Recovery Report</h3>
+          <p class="price">$9</p>
+          <p>Complete queue, reason codes, stronger copy, and day 1 / day 3 / day 7 follow-up tracker.</p>
+          <a class="btn secondary" href="https://ko-fi.com/leadleakdetector">Pay $9 on Ko-fi</a>
+        </article>
+        <article class="card">
+          <h3>How delivery works</h3>
+          <p>After payment, email the order note and anonymized chat text to <strong>tomwillgood@gmail.com</strong>. Remove names, phone numbers, addresses, and order IDs.</p>
+          <p class="small">No revenue guarantee. This is an operations audit that helps you decide who to follow up with first.</p>
+        </article>
+      </div>
     </section>
   </main>
   <footer>This is an operations audit tool. It does not guarantee revenue or sales.</footer>

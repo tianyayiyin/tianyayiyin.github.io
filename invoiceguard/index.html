@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>InvoiceGuard - invoice and payment risk check</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top">InvoiceGuard</a>
+    <nav>
+      <a href="#check">Run check</a>
+      <a href="#offers">Pricing</a>
+      <a class="paylink" href="https://ko-fi.com/leadleakdetector">Pay $9 audit</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">For freelancers, agencies, and small businesses</p>
+        <h1>Catch risky invoices before money leaves your account.</h1>
+        <p class="lead">Paste or upload invoice text, payment notes, or a simple CSV. InvoiceGuard flags duplicate invoice numbers, changed payment details, suspicious wording, missing due dates, overdue payments, and follow-up actions.</p>
+        <div class="actions">
+          <a class="button primary" href="#check">Run free risk check</a>
+          <a class="button secondary" href="https://ko-fi.com/leadleakdetector">Get $9 human review</a>
+        </div>
+      </div>
+      <aside class="risk-card" aria-label="risk examples">
+        <div class="risk-row high"><span>High</span> Bank details changed after invoice was issued</div>
+        <div class="risk-row high"><span>High</span> Duplicate invoice number with different amount</div>
+        <div class="risk-row medium"><span>Med</span> Overdue by 19 days with no reminder trail</div>
+        <div class="risk-row medium"><span>Med</span> Missing vendor tax or business identifier</div>
+        <div class="risk-row low"><span>Low</span> Payment terms are vague or not stated</div>
+      </aside>
+    </section>
+
+    <section class="strip">
+      <div>
+        <strong>Why people pay for this</strong>
+        <p>One duplicate payment, fake bank-detail update, or ignored overdue invoice can cost more than a year of tiny tools.</p>
+      </div>
+      <div>
+        <strong>What it is not</strong>
+        <p>Not legal, tax, or accounting advice. It is a fast pre-flight checklist before you pay, chase, or reconcile invoices.</p>
+      </div>
+      <div>
+        <strong>First paid offer</strong>
+        <p>$9 risk review for one invoice/payment sample, with a plain-English action list and email templates.</p>
+      </div>
+    </section>
+
+    <section class="problem">
+      <p class="eyebrow">The painful jobs</p>
+      <h2>Invoice mistakes are boring until they become expensive.</h2>
+      <div class="grid">
+        <article>
+          <h3>Before paying a vendor</h3>
+          <p>Check if bank details, vendor names, invoice numbers, totals, and urgent language look inconsistent.</p>
+        </article>
+        <article>
+          <h3>Before chasing a client</h3>
+          <p>Generate a calm day 1, day 7, and final reminder sequence from the invoice date and amount.</p>
+        </article>
+        <article>
+          <h3>Before month-end</h3>
+          <p>Find duplicate invoice numbers, missing due dates, suspicious refunds, and payment records that need review.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="check" class="checker">
+      <div class="section-head">
+        <p class="eyebrow">Free local checker</p>
+        <h2>Paste or upload invoice text</h2>
+        <p>Runs in your browser. Remove private bank numbers, addresses, tax IDs, and personal data before using. For paid review, send anonymized samples only.</p>
+      </div>
+
+      <div class="tool">
+        <div class="input-panel">
+          <label for="invoiceText">Invoice / payment text</label>
+          <textarea id="invoiceText" spellcheck="false" placeholder="Paste invoice text, email thread, payment note, CSV rows, or overdue invoice details..."></textarea>
+          <div class="file-row">
+            <label class="file-button" for="fileInput">Upload .txt/.csv</label>
+            <input id="fileInput" type="file" accept=".txt,.csv,text/plain,text/csv">
+            <button id="sampleBtn" type="button" class="button secondary">Load sample</button>
+          </div>
+        </div>
+
+        <aside class="settings">
+          <label>Expected vendor / client
+            <input id="partyName" placeholder="Acme Studio">
+          </label>
+          <label>Expected amount
+            <input id="expectedAmount" placeholder="1200.00">
+          </label>
+          <label>Invoice date
+            <input id="invoiceDate" type="date">
+          </label>
+          <label>Due date
+            <input id="dueDate" type="date">
+          </label>
+          <button id="analyzeBtn" type="button" class="button primary">Run risk check</button>
+          <button id="copyBtn" type="button" class="button secondary">Copy report</button>
+        </aside>
+      </div>
+
+      <div id="result" class="result empty">Your risk score, findings, and reminder copy will appear here.</div>
+    </section>
+
+    <section id="offers" class="offers">
+      <p class="eyebrow">Simple paid services</p>
+      <h2>Start with one risky invoice.</h2>
+      <div class="grid">
+        <article class="price-card">
+          <h3>Quick Risk Review</h3>
+          <p class="price">$9</p>
+          <p>One anonymized invoice/payment sample. You get risk flags, duplicate checks, action list, and one payment or collection email.</p>
+          <a class="button primary" href="https://ko-fi.com/leadleakdetector">Pay $9 on Ko-fi</a>
+        </article>
+        <article class="price-card">
+          <h3>Overdue Pack</h3>
+          <p class="price">$19</p>
+          <p>Up to five overdue invoices. Includes reminder sequence, priority order, and a small follow-up tracker.</p>
+          <a class="button secondary" href="mailto:tomwillgood@gmail.com?subject=InvoiceGuard%20Overdue%20Pack">Email sample</a>
+        </article>
+        <article class="price-card">
+          <h3>Monthly Desk</h3>
+          <p class="price">$49</p>
+          <p>Weekly review of anonymized invoice/payment exports for duplicates, overdue items, and suspicious changes.</p>
+          <a class="button secondary" href="mailto:tomwillgood@gmail.com?subject=InvoiceGuard%20Monthly%20Desk">Ask for setup</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="copy-block">
+      <h2>What to send after payment</h2>
+      <p>Send anonymized invoice text, payment email, or CSV export to <a href="mailto:tomwillgood@gmail.com">tomwillgood@gmail.com</a>. Remove account numbers, tax IDs, addresses, phone numbers, and personal data. Include only the parts needed to check invoice number, vendor/client name, amount, due date, payment terms, and any payment-detail changes.</p>
+    </section>
+  </main>
+
+  <footer>
+    <span>InvoiceGuard</span>
+    <span>Fast invoice/payment risk screening. Not legal, tax, or accounting advice.</span>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

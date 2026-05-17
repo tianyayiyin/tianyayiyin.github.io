@@ -29,7 +29,9 @@ function moneyValues(text) {
 }
 
 function invoiceNumbers(text) {
-  return [...text.matchAll(/\b(?:invoice\s*#?|inv[-\s:]?)([a-z0-9-]{3,})\b/gi)].map((m) => m[1].toUpperCase());
+  const explicit = [...text.matchAll(/\b(?:invoice\s*#?|inv[-\s:]?)([a-z0-9-]{3,})\b/gi)].map((m) => m[1].toUpperCase());
+  const standalone = [...text.matchAll(/\bINV[-\s]?\d{3,}\b/gi)].map((m) => m[0].toUpperCase().replace(/\s+/g, "-"));
+  return [...explicit, ...standalone];
 }
 
 function dateDiffDays(dateText) {

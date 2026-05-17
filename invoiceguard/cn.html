@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>InvoiceGuard 发票/付款风险检查</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top">InvoiceGuard 发票风险检查</a>
+    <nav>
+      <a href="#check">免费检查</a>
+      <a href="#offers">服务价格</a>
+      <a class="paylink" href="mailto:tomwillgood@gmail.com?subject=InvoiceGuard%20付款风险检查">发样本</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">适合小公司、自由职业者、工作室、电商卖家</p>
+        <h1>付款前先扫一遍，别让低级错误变成真损失。</h1>
+        <p class="lead">粘贴或上传脱敏发票文本、付款邮件、CSV 记录。InvoiceGuard 会检查重复发票号、收款账号变更、金额不一致、逾期未催、付款条款缺失和紧急催付话术，并生成确认/催款邮件。</p>
+        <div class="actions">
+          <a class="button primary" href="#check">免费本地检查</a>
+          <a class="button secondary" href="#offers">查看付费复核</a>
+        </div>
+      </div>
+      <aside class="risk-card">
+        <div class="risk-row high"><span>高危</span> 对方突然说“换收款账户”</div>
+        <div class="risk-row high"><span>高危</span> 同一个发票号出现两次</div>
+        <div class="risk-row medium"><span>中危</span> 金额和报价/合同不一致</div>
+        <div class="risk-row medium"><span>中危</span> 到期日已过但没有催款记录</div>
+        <div class="risk-row low"><span>提醒</span> 发票没有写清付款条款</div>
+      </aside>
+    </section>
+
+    <section class="strip">
+      <div>
+        <strong>为什么值得检查</strong>
+        <p>重复付款、假收款账号、逾期未催，一次失误可能比全年工具费更贵。</p>
+      </div>
+      <div>
+        <strong>它不是会计师</strong>
+        <p>这是付款前的快速风险清单，不是法律、税务或会计建议。</p>
+      </div>
+      <div>
+        <strong>怎么付费</strong>
+        <p>免费本地检查；需要人工复核时，可用微信/支付宝/Ko-fi，发送脱敏样本。</p>
+      </div>
+    </section>
+
+    <section class="problem">
+      <p class="eyebrow">能解决什么</p>
+      <h2>把付款前最容易漏看的风险先拦下来。</h2>
+      <div class="grid">
+        <article>
+          <h3>付款前检查</h3>
+          <p>检查供应商名、发票号、金额、收款信息和紧急催付话术是否异常。</p>
+        </article>
+        <article>
+          <h3>催款前整理</h3>
+          <p>根据发票日期和到期日生成温和、明确、可复制的催款邮件。</p>
+        </article>
+        <article>
+          <h3>月底对账前</h3>
+          <p>找出重复发票号、缺失到期日、可疑退款和需要人工确认的付款记录。</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="check" class="checker">
+      <div class="section-head">
+        <p class="eyebrow">免费本地检查</p>
+        <h2>粘贴或上传脱敏文本</h2>
+        <p>请先删除银行卡号、税号、地址、电话、身份证、客户隐私等敏感信息。页面在浏览器本地运行。</p>
+      </div>
+
+      <div class="tool">
+        <div class="input-panel">
+          <label for="invoiceText">发票 / 付款 / 催款文本</label>
+          <textarea id="invoiceText" spellcheck="false" placeholder="粘贴发票文字、付款邮件、CSV 行、逾期账款记录……"></textarea>
+          <div class="file-row">
+            <label class="file-button" for="fileInput">上传 .txt/.csv</label>
+            <input id="fileInput" type="file" accept=".txt,.csv,text/plain,text/csv">
+            <button id="sampleBtn" type="button" class="button secondary">载入示例</button>
+          </div>
+        </div>
+
+        <aside class="settings">
+          <label>预期供应商 / 客户
+            <input id="partyName" placeholder="某某工作室">
+          </label>
+          <label>预期金额
+            <input id="expectedAmount" placeholder="1200.00">
+          </label>
+          <label>发票日期
+            <input id="invoiceDate" type="date">
+          </label>
+          <label>到期日
+            <input id="dueDate" type="date">
+          </label>
+          <button id="analyzeBtn" type="button" class="button primary">开始检查</button>
+          <button id="copyBtn" type="button" class="button secondary">复制报告</button>
+        </aside>
+      </div>
+
+      <div id="result" class="result empty">风险分、异常项和邮件模板会显示在这里。</div>
+    </section>
+
+    <section id="offers" class="offers">
+      <p class="eyebrow">付费服务</p>
+      <h2>先从一份可疑发票开始。</h2>
+      <div class="grid">
+        <article class="price-card">
+          <h3>快速风险复核</h3>
+          <p class="price">¥39</p>
+          <p>复核一份脱敏发票/付款样本，给出风险点、确认问题、下一步动作和一封邮件模板。</p>
+          <a class="button primary" href="mailto:tomwillgood@gmail.com?subject=InvoiceGuard%20快速风险复核">发送脱敏样本</a>
+        </article>
+        <article class="price-card">
+          <h3>逾期催款包</h3>
+          <p class="price">¥99</p>
+          <p>最多 5 张逾期发票，生成催款优先级、递进话术和简单跟进表。</p>
+          <a class="button secondary" href="mailto:tomwillgood@gmail.com?subject=InvoiceGuard%20逾期催款包">咨询服务</a>
+        </article>
+        <article class="price-card">
+          <h3>月度付款检查</h3>
+          <p class="price">¥349</p>
+          <p>每周检查脱敏发票/付款导出，找重复、逾期、金额异常和可疑收款变更。</p>
+          <a class="button secondary" href="mailto:tomwillgood@gmail.com?subject=InvoiceGuard%20月度付款检查">咨询月度服务</a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>InvoiceGuard</span>
+    <span>只接收脱敏样本。不索要银行卡号、税号、密码、验证码或客户隐私。</span>
+  </footer>
+
+  <script src="app-cn.js"></script>
+</body>
+</html>

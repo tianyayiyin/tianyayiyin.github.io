@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>InvoiceGuard Promotion Console</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div>
+      <p class="eyebrow">Promotion Console</p>
+      <h1>InvoiceGuard 今日推广队列</h1>
+      <p>Chrome 自动控制未恢复前，用这个控制台半自动执行：打开平台、复制文案、粘贴发布。产品和文案我继续迭代。</p>
+    </div>
+    <a class="button primary" href="https://tianyayiyin.github.io/" target="_blank">打开主页</a>
+  </header>
+
+  <main>
+    <section>
+      <h2>优先发布</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>X / Twitter</h3>
+          <p>海外自有账号，发短帖带可信链接。</p>
+          <a class="button" href="https://x.com/home" target="_blank">打开 X</a>
+          <button data-copy="x1">复制文案</button>
+          <pre id="x1">Changed bank details in an invoice email = pause.
+
+Verify through a known phone number, compare amount to quote/PO, and check if the invoice number already exists.
+
+Free pre-payment checker:
+https://tianyayiyin.github.io/invoiceguard/</pre>
+        </article>
+
+        <article class="card">
+          <h3>微博 / 小红书</h3>
+          <p>中文平台优先图文，不主推 GitHub 外链。</p>
+          <a class="button" href="https://weibo.com/" target="_blank">打开微博</a>
+          <button data-copy="cn1">复制文案</button>
+          <pre id="cn1">付款前先看这 5 点，别重复付款。
+
+小公司付款前，最容易踩的坑不是复杂财务，而是几个低级错误：
+
+1. 同一个发票号重复付款
+2. 对方突然说“换收款账户”
+3. 金额和报价/合同不一致
+4. 发票没有到期日
+5. 逾期账款一直没催
+
+我做了一个“付款前风险检查”服务：发脱敏发票文本或 CSV，我帮你看重复发票、收款信息变更、金额异常、逾期未催，并给一封确认/催款邮件。
+
+只看脱敏样本，不要发银行卡号、税号、密码、验证码或客户隐私。
+
+快速复核 ¥39 起。</pre>
+          <p class="path">配图：D:\SaaS_Factory\InvoiceRiskGuard\invoiceguard_cn_poster.png</p>
+        </article>
+
+        <article class="card">
+          <h3>Reddit 近期线索</h3>
+          <p>近期未付款发票跟进痛点。建议无链接专业回复。</p>
+          <a class="button" href="https://www.reddit.com/r/smallbusiness/comments/1t6yqcl/how_are_you_handling_unpaid_invoice_followups/" target="_blank">打开帖子</a>
+          <button data-copy="r1">复制评论</button>
+          <pre id="r1">The least annoying follow-ups are usually the most predictable ones. I would set a cadence before the invoice is late:
+
+- 3 days before due: confirm they received it and ask if it is scheduled
+- due date: short reminder, no emotion
+- 7 days overdue: ask for a specific payment date
+- 14 days overdue: mention that new work pauses if it is not brought current
+
+The important part is tracking the last reminder and the next promised payment date. Most owners do not need harsher wording first; they need a system that prevents invoices from living in memory.</pre>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>第二批</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>X：逾期发票角度</h3>
+          <button data-copy="x2">复制文案</button>
+          <pre id="x2">Overdue invoices usually break in two places:
+
+1. no exact payment date before the due date
+2. no fixed follow-up rhythm after it
+
+InvoiceGuard turns invoice text into a risk check + verification/follow-up email.
+
+https://tianyayiyin.github.io/invoiceguard/</pre>
+        </article>
+        <article class="card">
+          <h3>中文评论：换收款账户</h3>
+          <button data-copy="cn2">复制评论</button>
+          <pre id="cn2">突然换收款账户一定要当成高风险，不管对方邮件写得多像真的。最好用原来备案电话或合同联系人确认，不要用邮件里新给的电话。很多付款损失不是会计问题，是付款前少了这一步核验。</pre>
+        </article>
+        <article class="card">
+          <h3>Reddit：重复付款</h3>
+          <button data-copy="r2">复制评论</button>
+          <pre id="r2">The best prevention is a tiny pre-payment duplicate check before the money moves:
+
+- same invoice number already seen
+- same vendor + amount in the last 30-60 days
+- invoice sent to both a personal inbox and billing inbox
+- payment status already marked paid
+- credit note or refund already pending
+
+It is boring, but boring is exactly what you want here. Duplicate payments usually come from messy handoff, not complicated accounting.</pre>
+        </article>
+      </div>
+    </section>
+
+    <section class="links">
+      <h2>产品入口</h2>
+      <p>海外主页：<a href="https://tianyayiyin.github.io/" target="_blank">https://tianyayiyin.github.io/</a></p>
+      <p>英文检查器：<a href="https://tianyayiyin.github.io/invoiceguard/" target="_blank">https://tianyayiyin.github.io/invoiceguard/</a></p>
+      <p>中文备用页：<a href="https://tianyayiyin.github.io/invoiceguard/cn.html" target="_blank">https://tianyayiyin.github.io/invoiceguard/cn.html</a></p>
+      <p>海外付款：<a href="https://ko-fi.com/leadleakdetector" target="_blank">https://ko-fi.com/leadleakdetector</a></p>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

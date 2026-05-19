@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ChargebackGuard - dispute evidence checker</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="../">CashProof Studio</a>
+    <nav>
+      <a href="#check">Run check</a>
+      <a href="#offers">Pricing</a>
+      <a class="paylink" href="https://ko-fi.com/leadleakdetector">Pay $19 pack</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <p class="eyebrow">For PayPal, Stripe, card, and marketplace disputes</p>
+        <h1>Turn messy chargeback notes into an evidence plan.</h1>
+        <p class="lead">Paste anonymized dispute text, customer claims, delivery notes, or payment timeline. ChargebackGuard flags missing evidence, weak response points, refund-risk language, deadline pressure, and the next action to prepare.</p>
+        <div class="actions">
+          <a class="button primary" href="#check">Run free dispute check</a>
+          <a class="button secondary" href="https://ko-fi.com/leadleakdetector">Get $19 response pack</a>
+        </div>
+      </div>
+      <aside class="risk-card">
+        <div class="risk-row high"><span>High</span> No proof of delivery or service completion</div>
+        <div class="risk-row high"><span>High</span> Customer claim is not matched to evidence</div>
+        <div class="risk-row medium"><span>Med</span> Refund policy exists but was not cited</div>
+        <div class="risk-row medium"><span>Med</span> Timeline is unclear or missing dates</div>
+        <div class="risk-row low"><span>Low</span> Response tone is emotional instead of factual</div>
+      </aside>
+    </section>
+
+    <section class="strip">
+      <div>
+        <strong>Why this sells</strong>
+        <p>A single lost chargeback can cost more than the review. Sellers need fast evidence organization before the deadline.</p>
+      </div>
+      <div>
+        <strong>Privacy rule</strong>
+        <p>Use anonymized text only. Remove customer names, addresses, card numbers, tax IDs, passwords, and account data.</p>
+      </div>
+      <div>
+        <strong>Paid offer</strong>
+        <p>$19 dispute response pack: evidence checklist, response structure, and one concise draft.</p>
+      </div>
+    </section>
+
+    <section id="check" class="checker">
+      <div class="section-head">
+        <p class="eyebrow">Free local checker</p>
+        <h2>Paste anonymized dispute text</h2>
+        <p>Works in your browser. This is not legal advice and cannot guarantee dispute outcomes. It helps you organize a cleaner response.</p>
+      </div>
+
+      <div class="tool">
+        <textarea id="caseText" placeholder="Example:
+Platform: PayPal
+Reason: item not received
+Customer says package never arrived.
+Order date: May 2
+Tracking: delivered May 8
+Messages: customer asked for refund after delivery
+Policy: refunds accepted within 7 days if unused"></textarea>
+        <div class="tool-actions">
+          <button id="sampleBtn" type="button">Load sample</button>
+          <button id="checkBtn" type="button">Analyze dispute</button>
+        </div>
+      </div>
+
+      <div id="results" class="results" hidden>
+        <div class="score">
+          <span id="scoreLabel">Risk score</span>
+          <strong id="scoreValue">0</strong>
+        </div>
+        <div class="result-grid">
+          <article>
+            <h3>Missing evidence</h3>
+            <ul id="missingList"></ul>
+          </article>
+          <article>
+            <h3>Response angle</h3>
+            <ul id="angleList"></ul>
+          </article>
+          <article>
+            <h3>Next action</h3>
+            <p id="nextAction"></p>
+          </article>
+        </div>
+        <div class="email-box">
+          <h3>Draft response structure</h3>
+          <pre id="responseDraft"></pre>
+        </div>
+      </div>
+    </section>
+
+    <section id="offers" class="offers">
+      <p class="eyebrow">Upgrade when money is at risk</p>
+      <h2>Simple paid packs</h2>
+      <div class="offer-grid">
+        <article>
+          <h3>Quick Triage</h3>
+          <p class="price">$9</p>
+          <p>One anonymized dispute reviewed for missing evidence and risk points.</p>
+        </article>
+        <article>
+          <h3>Response Pack</h3>
+          <p class="price">$19</p>
+          <p>Evidence checklist, response structure, and one concise draft for PayPal/Stripe/card dispute.</p>
+        </article>
+        <article>
+          <h3>Monthly Desk</h3>
+          <p class="price">$49</p>
+          <p>Lightweight monthly dispute and payment-risk desk for small operators.</p>
+        </article>
+      </div>
+      <a class="button primary" href="https://ko-fi.com/leadleakdetector">Pay on Ko-fi</a>
+    </section>
+  </main>
+
+  <footer>
+    <span>CashProof Studio</span>
+    <span>ChargebackGuard is an operational checklist, not legal advice.</span>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>

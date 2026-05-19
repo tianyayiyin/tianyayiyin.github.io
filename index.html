@@ -3,69 +3,104 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>InvoiceGuard and small business recovery tools</title>
+  <title>CashProof Studio - small business cash recovery tools</title>
   <style>
-    :root{--bg:#101214;--panel:#181d20;--line:#364247;--text:#f4f2ea;--muted:#aeb8b8;--accent:#f5c542;--green:#42d392}
+    :root{--bg:#101214;--panel:#181d20;--line:#364247;--text:#f4f2ea;--muted:#aeb8b8;--accent:#f5c542;--green:#42d392;--blue:#7dd3fc;--danger:#ff6b6b}
     *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-    a{color:inherit}.top{display:flex;justify-content:space-between;gap:18px;align-items:center;padding:18px 6vw;border-bottom:1px solid var(--line)}.brand{font-weight:950}
+    a{color:inherit}.top{display:flex;justify-content:space-between;gap:18px;align-items:center;padding:18px 6vw;border-bottom:1px solid var(--line);background:rgba(16,18,20,.92);position:sticky;top:0;z-index:3}.brand{font-weight:950}.top nav{display:flex;gap:10px;align-items:center}
     .hero{min-height:72vh;padding:72px 6vw;display:grid;grid-template-columns:minmax(0,1.08fr) minmax(300px,.72fr);gap:42px;align-items:center}
     .eyebrow{color:var(--green);font-size:13px;font-weight:900;text-transform:uppercase}h1{font-size:clamp(44px,7vw,88px);line-height:.96;margin:0 0 24px}h2{font-size:clamp(30px,4vw,52px);line-height:1.06;margin:0 0 18px}h3{margin:0 0 10px}
     p{color:var(--muted);line-height:1.65}.lead{font-size:20px;max-width:760px}.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}.btn{display:inline-flex;min-height:44px;align-items:center;justify-content:center;padding:0 18px;border:1px solid var(--line);border-radius:7px;text-decoration:none;font-weight:850}.primary{background:var(--accent);border-color:var(--accent);color:#141414}.secondary{background:#14181b}
-    .panel,.card{background:var(--panel);border:1px solid var(--line);border-radius:8px}.panel{padding:22px}.row{padding:15px 0;border-bottom:1px solid var(--line)}.row:last-child{border:0}.row span{color:var(--accent);font-weight:950;margin-right:8px}
-    section{padding:62px 6vw;border-top:1px solid var(--line)}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.card{padding:22px}.price{color:var(--accent);font-size:34px;font-weight:950;margin:0 0 10px}
-    footer{display:flex;justify-content:space-between;gap:18px;padding:28px 6vw;color:var(--muted);border-top:1px solid var(--line)}@media(max-width:900px){.hero,.grid{grid-template-columns:1fr}.top nav{display:none}}
+    .panel,.card{background:var(--panel);border:1px solid var(--line);border-radius:8px}.panel{padding:22px}.row{padding:15px 0;border-bottom:1px solid var(--line)}.row:last-child{border:0}.row span{font-weight:950;margin-right:8px}.row .hot{color:var(--danger)}.row .new{color:var(--blue)}.row .cash{color:var(--accent)}
+    section{padding:62px 6vw;border-top:1px solid var(--line)}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}.card{padding:22px}.price{color:var(--accent);font-size:34px;font-weight:950;margin:0 0 10px}.tag{display:inline-flex;margin-bottom:14px;padding:5px 8px;border:1px solid var(--line);border-radius:6px;color:var(--muted);font-size:12px;font-weight:800}
+    .audit{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.audit div{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:20px}
+    footer{display:flex;justify-content:space-between;gap:18px;padding:28px 6vw;color:var(--muted);border-top:1px solid var(--line)}@media(max-width:1000px){.hero,.grid,.audit{grid-template-columns:1fr}.top nav{display:none}}
   </style>
 </head>
 <body>
   <header class="top">
-    <div class="brand">InvoiceGuard Desk</div>
-    <nav><a class="btn secondary" href="/invoiceguard/">InvoiceGuard</a></nav>
+    <div class="brand">CashProof Studio</div>
+    <nav>
+      <a class="btn secondary" href="/invoiceguard/">InvoiceGuard</a>
+      <a class="btn secondary" href="/chargebackguard/">ChargebackGuard</a>
+      <a class="btn primary" href="https://ko-fi.com/leadleakdetector">Pay for review</a>
+    </nav>
   </header>
   <main>
     <section class="hero">
       <div>
-        <p class="eyebrow">Primary product</p>
-        <h1>Catch risky invoices before money leaves your account.</h1>
-        <p class="lead">InvoiceGuard flags duplicate invoice numbers, changed bank/payment details, missing due dates, overdue invoices, pressure language, and amount mismatches. Free local checker first, then a $9 human review if you want a second pair of eyes.</p>
+        <p class="eyebrow">Small-business cash recovery tools</p>
+        <h1>Catch cash leaks before they become losses.</h1>
+        <p class="lead">CashProof Studio builds lightweight browser tools for invoices, chargebacks, overdue payments, and missed leads. Start with a free local check, then upgrade to a small paid review when money is actually at risk.</p>
         <div class="actions">
-          <a class="btn primary" href="/invoiceguard/">Run free InvoiceGuard check</a>
-          <a class="btn secondary" href="https://ko-fi.com/leadleakdetector">Pay $9 quick review</a>
+          <a class="btn primary" href="/invoiceguard/">Run InvoiceGuard</a>
+          <a class="btn secondary" href="/chargebackguard/">Run ChargebackGuard</a>
         </div>
       </div>
       <aside class="panel">
-        <h3>What it checks</h3>
-        <div class="row"><span>01</span>Duplicate invoice numbers</div>
-        <div class="row"><span>02</span>Changed bank or payment details</div>
-        <div class="row"><span>03</span>Amount mismatch against expected total</div>
-        <div class="row"><span>04</span>Overdue invoices and weak follow-up trail</div>
-        <div class="row"><span>05</span>Urgent payment pressure language</div>
+        <h3>What we protect</h3>
+        <div class="row"><span class="cash">01</span>Invoices before payment</div>
+        <div class="row"><span class="hot">02</span>Chargebacks before the response deadline</div>
+        <div class="row"><span class="cash">03</span>Overdue invoices before they go cold</div>
+        <div class="row"><span class="new">04</span>DMs and comments before leads leak away</div>
+        <div class="row"><span class="new">05</span>Private-traffic conversations before sales are lost</div>
       </aside>
     </section>
+
     <section>
-      <p class="eyebrow">Parallel products</p>
-      <h2>More small-business recovery tools</h2>
+      <p class="eyebrow">Product matrix</p>
+      <h2>One studio, multiple focused products</h2>
       <div class="grid">
         <article class="card">
+          <span class="tag">Primary</span>
           <h3>InvoiceGuard</h3>
           <p class="price">$9</p>
-          <p>Invoice/payment risk check for freelancers, agencies, and small businesses.</p>
+          <p>Check duplicate invoice numbers, changed payment details, missing due dates, overdue follow-ups, and amount mismatch.</p>
           <a class="btn primary" href="/invoiceguard/">Open checker</a>
         </article>
         <article class="card">
-          <h3>LeadLeak Detector</h3>
-          <p class="price">$5</p>
-          <p>Find missed follow-ups in anonymized DMs, emails, WhatsApp, and comments.</p>
-          <a class="btn secondary" href="/leadleak/">View offer</a>
+          <span class="tag">New</span>
+          <h3>ChargebackGuard</h3>
+          <p class="price">$19</p>
+          <p>Turn PayPal, Stripe, card, and marketplace disputes into an evidence checklist and response structure.</p>
+          <a class="btn primary" href="/chargebackguard/">Open checker</a>
         </article>
         <article class="card">
+          <span class="tag">Secondary</span>
+          <h3>LeadLeak Detector</h3>
+          <p class="price">$5</p>
+          <p>Find missed follow-ups in anonymized DMs, emails, WhatsApp, WeChat, SMS, and comments.</p>
+          <a class="btn secondary" href="mailto:tomwillgood@gmail.com">Ask for audit</a>
+        </article>
+        <article class="card">
+          <span class="tag">Domestic</span>
           <h3>XHSLeadClinic</h3>
           <p class="price">¥39</p>
-          <p>Chinese private-traffic diagnosis for Xiaohongshu comments and DM conversion leaks.</p>
+          <p>Xiaohongshu and Weibo private-traffic diagnosis for comments, DMs, and conversion leaks.</p>
           <a class="btn secondary" href="mailto:tomwillgood@gmail.com">Ask for sample</a>
         </article>
       </div>
     </section>
+
+    <section>
+      <p class="eyebrow">Conversion audit</p>
+      <h2>What changed to improve sales odds</h2>
+      <div class="audit">
+        <div>
+          <h3>Unified brand</h3>
+          <p>All products now sit under CashProof Studio, so social profiles can sell a product line instead of a random one-off tool.</p>
+        </div>
+        <div>
+          <h3>Lower friction</h3>
+          <p>Each product starts with a free browser check and upgrades only when the user sees a concrete risk or missing evidence.</p>
+        </div>
+        <div>
+          <h3>More urgent pain</h3>
+          <p>ChargebackGuard targets sellers facing deadlines and possible direct losses, which is closer to immediate payment intent.</p>
+        </div>
+      </div>
+    </section>
   </main>
-  <footer><span>InvoiceGuard Desk</span><span>Fast checks, anonymized samples only. Not legal, tax, or accounting advice.</span></footer>
+  <footer><span>CashProof Studio</span><span>Anonymized samples only. Not legal, tax, accounting, or financial advice.</span></footer>
 </body>
 </html>

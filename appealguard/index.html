@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AppealGuard - marketplace suspension appeal checker</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="../">CashProof Studio</a>
+    <nav>
+      <a href="#check">Run check</a>
+      <a href="#offers">Pricing</a>
+      <a class="paylink" href="https://ko-fi.com/leadleakdetector">Pay $29 appeal pack</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <p class="eyebrow">For Amazon, Etsy, eBay, Shopify, and marketplace sellers</p>
+        <h1>Turn a suspension notice into a cleaner appeal plan.</h1>
+        <p class="lead">Paste an anonymized marketplace warning, listing takedown, payment hold, or account suspension notice. AppealGuard identifies the likely issue, missing evidence, root-cause gaps, and a structured appeal outline.</p>
+        <div class="actions">
+          <a class="button primary" href="#check">Run free appeal check</a>
+          <a class="button secondary" href="https://ko-fi.com/leadleakdetector">Get $29 appeal pack</a>
+        </div>
+      </div>
+      <aside class="risk-card">
+        <div class="risk-row high"><span>High</span> No root cause stated</div>
+        <div class="risk-row high"><span>High</span> Missing corrective action</div>
+        <div class="risk-row medium"><span>Med</span> Evidence does not match platform claim</div>
+        <div class="risk-row medium"><span>Med</span> Appeal sounds defensive or emotional</div>
+        <div class="risk-row low"><span>Low</span> Prevention plan is vague</div>
+      </aside>
+    </section>
+
+    <section class="strip">
+      <div>
+        <strong>Why this monetizes</strong>
+        <p>Suspended sellers have money stuck, ads paused, or listings down. A small appeal pack is cheap compared with lost daily revenue.</p>
+      </div>
+      <div>
+        <strong>Privacy rule</strong>
+        <p>Use anonymized text only. Remove buyer names, order IDs, addresses, phone numbers, tax IDs, and account credentials.</p>
+      </div>
+      <div>
+        <strong>Paid offer</strong>
+        <p>$29 appeal pack: root-cause map, evidence checklist, appeal outline, and one concise draft.</p>
+      </div>
+    </section>
+
+    <section id="check" class="checker">
+      <div class="section-head">
+        <p class="eyebrow">Free local checker</p>
+        <h2>Paste anonymized platform notice</h2>
+        <p>This is operational help, not legal advice. It does not guarantee reinstatement. It helps structure a clearer response.</p>
+      </div>
+
+      <div class="tool">
+        <textarea id="noticeText" placeholder="Example:
+Platform: Amazon
+Issue: listing removed for authenticity complaint
+Notice: provide invoices, supplier information, and plan of action.
+Seller says products are genuine but invoices are missing supplier contact details.
+Current appeal: I did nothing wrong, please reactivate my listing."></textarea>
+        <div class="tool-actions">
+          <button id="sampleBtn" type="button">Load sample</button>
+          <button id="checkBtn" type="button">Analyze notice</button>
+        </div>
+      </div>
+
+      <div id="results" class="results" hidden>
+        <div class="score">
+          <span id="scoreLabel">Appeal readiness</span>
+          <strong id="scoreValue">0</strong>
+        </div>
+        <div class="result-grid">
+          <article>
+            <h3>Likely issue</h3>
+            <ul id="issueList"></ul>
+          </article>
+          <article>
+            <h3>Missing evidence</h3>
+            <ul id="evidenceList"></ul>
+          </article>
+          <article>
+            <h3>Next action</h3>
+            <p id="nextAction"></p>
+          </article>
+        </div>
+        <div class="email-box">
+          <h3>Appeal outline</h3>
+          <pre id="appealDraft"></pre>
+        </div>
+      </div>
+    </section>
+
+    <section id="offers" class="offers">
+      <p class="eyebrow">When the account or listing is worth saving</p>
+      <h2>Fast appeal support packs</h2>
+      <div class="offer-grid">
+        <article>
+          <h3>Quick Triage</h3>
+          <p class="price">$9</p>
+          <p>One anonymized notice reviewed for likely issue, missing evidence, and appeal risk.</p>
+        </article>
+        <article>
+          <h3>Appeal Pack</h3>
+          <p class="price">$29</p>
+          <p>Root-cause map, evidence checklist, appeal outline, and one concise draft.</p>
+        </article>
+        <article>
+          <h3>Seller Desk</h3>
+          <p class="price">$79</p>
+          <p>Monthly light desk for listing warnings, appeal prep, policy-risk review, and evidence organization.</p>
+        </article>
+      </div>
+      <a class="button primary" href="https://ko-fi.com/leadleakdetector">Pay on Ko-fi</a>
+    </section>
+  </main>
+
+  <footer>
+    <span>CashProof Studio</span>
+    <span>AppealGuard is operational support, not legal advice or a reinstatement guarantee.</span>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>

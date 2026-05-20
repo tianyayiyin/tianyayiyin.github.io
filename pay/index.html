@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Payment Hub - CashProof Studio / FateSpark</title>
+  <style>
+    :root{--bg:#0f1217;--panel:#171d25;--line:#334155;--text:#f8fafc;--muted:#b6c2cf;--accent:#34d399;--gold:#facc15;--blue:#60a5fa}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",sans-serif}
+    a{color:inherit}.top{display:flex;justify-content:space-between;gap:18px;align-items:center;padding:16px 6vw;border-bottom:1px solid var(--line);background:rgba(15,18,23,.94);position:sticky;top:0}.brand{font-weight:950;text-decoration:none}.top nav{display:flex;gap:12px}.btn{display:inline-flex;min-height:44px;align-items:center;justify-content:center;padding:0 16px;border:1px solid var(--line);border-radius:7px;text-decoration:none;font-weight:900}.primary{background:var(--accent);border-color:var(--accent);color:#062014}.secondary{background:#202936}
+    .hero{padding:72px 6vw 42px}.eyebrow{color:var(--accent);font-size:13px;font-weight:950;text-transform:uppercase}h1{font-size:clamp(42px,7vw,82px);line-height:.96;margin:0 0 20px}h2{font-size:clamp(28px,4vw,48px);margin:0 0 16px}p{color:var(--muted);line-height:1.65}.lead{max-width:860px;font-size:20px}
+    section{padding:42px 6vw;border-top:1px solid var(--line)}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.card{padding:22px;border:1px solid var(--line);border-radius:8px;background:var(--panel)}.card strong{display:block;margin-bottom:10px;color:var(--gold);font-size:26px}.price{color:var(--accent);font-weight:950}.qr{width:100%;max-width:310px;border-radius:8px;background:#fff;padding:10px}.addr{word-break:break-all;background:#0b1020;border:1px solid var(--line);border-radius:7px;padding:12px;color:#d1fae5;font-family:Consolas,"Cascadia Code",monospace}.offer{display:grid;gap:8px;margin-top:12px}.offer span{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid var(--line);padding:8px 0;color:var(--muted)}footer{padding:28px 6vw;border-top:1px solid var(--line);color:var(--muted)}@media(max-width:980px){.grid{grid-template-columns:1fr}.top nav{display:none}}
+  </style>
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="../">CashProof Studio / FateSpark</a>
+    <nav>
+      <a class="btn secondary" href="../">Products</a>
+      <a class="btn primary" href="https://ko-fi.com/leadleakdetector">Ko-fi / PayPal</a>
+    </nav>
+  </header>
+  <main>
+    <section class="hero">
+      <p class="eyebrow">Unified payment hub</p>
+      <h1>Choose a payment method, then send your anonymized request.</h1>
+      <p class="lead">支持 Ko-fi/PayPal、微信、支付宝、USDC/USDT。付款后请发送产品名、套餐名、付款截图或交易哈希，以及脱敏报告/问题。不要发送密码、密钥、身份证、完整订单隐私或客户私人数据。</p>
+      <div class="offer">
+        <span><b>C盘急救箱</b><em>¥39/$9 report review, ¥99/$19 dev cache plan</em></span>
+        <span><b>FateSpark 今日命盘</b><em>¥19/$5 deep report, ¥39/$9 compatibility</em></span>
+        <span><b>InvoiceGuard</b><em>¥39/$9 quick review, ¥99/$19 overdue pack</em></span>
+        <span><b>ChargebackGuard</b><em>$9 triage, $19 response pack</em></span>
+        <span><b>AppealGuard</b><em>$9 triage, $29 appeal pack</em></span>
+      </div>
+    </section>
+
+    <section>
+      <h2>Fast checkout</h2>
+      <div class="grid">
+        <article class="card">
+          <strong>Ko-fi / PayPal</strong>
+          <p>Best for overseas payments. Use one-time support, then include product name in message.</p>
+          <a class="btn primary" href="https://ko-fi.com/leadleakdetector">Pay on Ko-fi</a>
+        </article>
+        <article class="card">
+          <strong>WeChat Pay</strong>
+          <p>国内用户可扫码付款。付款备注写产品名和套餐名。</p>
+          <img class="qr" src="wechat-pay.png" alt="WeChat payment QR">
+        </article>
+        <article class="card">
+          <strong>Alipay</strong>
+          <p>国内用户可扫码付款。付款后通过私信/邮箱发送脱敏材料。</p>
+          <img class="qr" src="alipay.jpg" alt="Alipay payment QR">
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Crypto backup</h2>
+      <div class="grid">
+        <article class="card">
+          <strong>USDC on Base</strong>
+          <div class="addr">0xc3804857DAF16360D2A051a8ddF088fEd9c108F1</div>
+        </article>
+        <article class="card">
+          <strong>USDC on Solana</strong>
+          <div class="addr">3qGQ5MtoNnMPwbe3UVXGFxZ2XGNuTFRN4C3dcSX3a23a</div>
+        </article>
+        <article class="card">
+          <strong>USDT on Ethereum</strong>
+          <div class="addr">0xc3804857DAF16360D2A051a8ddF088fEd9c108F1</div>
+        </article>
+      </div>
+      <p>Crypto payments are backup rails. Double-check chain/network before sending. We will never ask for seed phrases, private keys, signatures, approvals, or exchange passwords.</p>
+    </section>
+
+    <section>
+      <h2>After payment</h2>
+      <p>Send: product name, package, payment screenshot or transaction hash, and anonymized input/report. Contact: tomwillgood@gmail.com, Discord: tianyayiyin, or current social DM.</p>
+    </section>
+  </main>
+  <footer>CashProof Studio / FateSpark. Entertainment tools are for self-reflection only; business tools are operational support, not legal, tax, accounting, medical, financial, or guaranteed outcome advice.</footer>
+</body>
+</html>

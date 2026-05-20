@@ -5,11 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Payment Hub - CashProof Studio / FateSpark</title>
   <style>
-    :root{--bg:#0f1217;--panel:#171d25;--line:#334155;--text:#f8fafc;--muted:#b6c2cf;--accent:#34d399;--gold:#facc15;--blue:#60a5fa}
-    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",sans-serif}
-    a{color:inherit}.top{display:flex;justify-content:space-between;gap:18px;align-items:center;padding:16px 6vw;border-bottom:1px solid var(--line);background:rgba(15,18,23,.94);position:sticky;top:0}.brand{font-weight:950;text-decoration:none}.top nav{display:flex;gap:12px}.btn{display:inline-flex;min-height:44px;align-items:center;justify-content:center;padding:0 16px;border:1px solid var(--line);border-radius:7px;text-decoration:none;font-weight:900}.primary{background:var(--accent);border-color:var(--accent);color:#062014}.secondary{background:#202936}
-    .hero{padding:72px 6vw 42px}.eyebrow{color:var(--accent);font-size:13px;font-weight:950;text-transform:uppercase}h1{font-size:clamp(42px,7vw,82px);line-height:.96;margin:0 0 20px}h2{font-size:clamp(28px,4vw,48px);margin:0 0 16px}p{color:var(--muted);line-height:1.65}.lead{max-width:860px;font-size:20px}
-    section{padding:42px 6vw;border-top:1px solid var(--line)}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.card{padding:22px;border:1px solid var(--line);border-radius:8px;background:var(--panel)}.card strong{display:block;margin-bottom:10px;color:var(--gold);font-size:26px}.price{color:var(--accent);font-weight:950}.qr{width:100%;max-width:310px;border-radius:8px;background:#fff;padding:10px}.addr{word-break:break-all;background:#0b1020;border:1px solid var(--line);border-radius:7px;padding:12px;color:#d1fae5;font-family:Consolas,"Cascadia Code",monospace}.offer{display:grid;gap:8px;margin-top:12px}.offer span{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid var(--line);padding:8px 0;color:var(--muted)}footer{padding:28px 6vw;border-top:1px solid var(--line);color:var(--muted)}@media(max-width:980px){.grid{grid-template-columns:1fr}.top nav{display:none}}
+    :root{--bg:#0f1217;--panel:#171d25;--line:#334155;--text:#f8fafc;--muted:#b6c2cf;--accent:#34d399;--gold:#facc15;--blue:#60a5fa;--warn:#fb923c}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",sans-serif}
+    a{color:inherit}
+    .top{display:flex;justify-content:space-between;gap:18px;align-items:center;padding:16px 6vw;border-bottom:1px solid var(--line);background:rgba(15,18,23,.94);position:sticky;top:0;z-index:5}
+    .brand{font-weight:950;text-decoration:none}
+    .top nav{display:flex;gap:12px}
+    .btn{display:inline-flex;min-height:44px;align-items:center;justify-content:center;padding:0 16px;border:1px solid var(--line);border-radius:7px;text-decoration:none;font-weight:900;cursor:pointer}
+    .primary{background:var(--accent);border-color:var(--accent);color:#062014}
+    .secondary{background:#202936}
+    .hero{padding:72px 6vw 42px}
+    .eyebrow{color:var(--accent);font-size:13px;font-weight:950;text-transform:uppercase;letter-spacing:.08em}
+    h1{font-size:clamp(40px,7vw,78px);line-height:.98;margin:0 0 20px}
+    h2{font-size:clamp(28px,4vw,46px);margin:0 0 16px}
+    p{color:var(--muted);line-height:1.65}
+    .lead{max-width:900px;font-size:20px}
+    section{padding:42px 6vw;border-top:1px solid var(--line)}
+    .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+    .card{padding:22px;border:1px solid var(--line);border-radius:8px;background:var(--panel)}
+    .card strong{display:block;margin-bottom:10px;color:var(--gold);font-size:26px}
+    .price{color:var(--accent);font-weight:950}
+    .warn{color:var(--warn);font-weight:950}
+    .tag{display:inline-flex;align-items:center;min-height:30px;padding:0 10px;border-radius:999px;border:1px solid var(--line);font-size:13px;font-weight:950;margin:0 8px 12px 0}
+    .ok{background:rgba(52,211,153,.12);color:#a7f3d0;border-color:rgba(52,211,153,.45)}
+    .manual{background:rgba(250,204,21,.12);color:#fde68a;border-color:rgba(250,204,21,.42)}
+    .backup{background:rgba(96,165,250,.12);color:#bfdbfe;border-color:rgba(96,165,250,.42)}
+    .qr{width:100%;max-width:310px;border-radius:8px;background:#fff;padding:10px}
+    .addr{word-break:break-all;background:#0b1020;border:1px solid var(--line);border-radius:7px;padding:12px;color:#d1fae5;font-family:Consolas,"Cascadia Code",monospace}
+    .offer{display:grid;gap:8px;margin-top:12px}
+    .offer span{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid var(--line);padding:8px 0;color:var(--muted)}
+    .notice{max-width:980px;border:1px solid rgba(251,146,60,.45);background:rgba(251,146,60,.1)}
+    footer{padding:28px 6vw;border-top:1px solid var(--line);color:var(--muted)}
+    @media(max-width:980px){.grid{grid-template-columns:1fr}.top nav{display:none}.offer span{display:block}.offer em{display:block;margin-top:4px}}
   </style>
 </head>
 <body>
@@ -20,12 +48,17 @@
       <a class="btn primary" href="https://ko-fi.com/leadleakdetector">Ko-fi / PayPal</a>
     </nav>
   </header>
+
   <main>
     <section class="hero">
       <p class="eyebrow">Unified payment hub</p>
-      <h1>Choose a payment method, then send your anonymized request.</h1>
+      <h1>选择付款方式，然后发送脱敏需求。</h1>
       <div id="selectedPlan" class="card" style="display:none;margin:18px 0;max-width:860px"></div>
-      <p class="lead">支持 Ko-fi/PayPal、微信、支付宝、USDC/USDT。付款后请发送产品名、套餐名、付款截图或交易哈希，以及脱敏报告/问题。不要发送密码、密钥、身份证、完整订单隐私或客户私人数据。</p>
+      <p class="lead">支持 Ko-fi/PayPal、微信、支付宝、USDC/USDT。当前只有 Ko-fi Shop 数字商品可以做到付款后自动交付；微信、支付宝和链上付款都可以收款，但需要人工核对后交付。付款后请发送产品名、套餐名、付款截图或交易哈希，以及脱敏后的报告/问题。</p>
+      <article class="card notice">
+        <strong>付款前小提醒</strong>
+        <p>不要发送密码、私钥、助记词、身份证件、完整订单隐私、客户私人数据或任何需要登录授权的信息。业务工具提供操作辅助，不承诺收益或结果；FateSpark 属于娱乐和自我反思产品。</p>
+      </article>
       <div class="offer">
         <span><b>C盘急救箱</b><em>¥39/$9 report review, ¥99/$19 dev cache plan</em></span>
         <span><b>FateSpark 今日命盘</b><em>¥19/$5 deep report, ¥39/$9 compatibility</em></span>
@@ -40,17 +73,20 @@
       <div class="grid">
         <article class="card">
           <strong>Ko-fi / PayPal</strong>
-          <p>Best for overseas payments. Use one-time support, then include product name in message.</p>
+          <span class="tag ok">可自动交付</span>
+          <p><b class="price">海外付款首选。</b> 如果商品在 Ko-fi Shop 里，付款后可由 Ko-fi 自动提供下载或交付说明。普通 Ko-fi 打赏/付款仍可用，但可能需要人工确认订单信息。</p>
           <a class="btn primary" href="https://ko-fi.com/leadleakdetector">Pay on Ko-fi</a>
         </article>
         <article class="card">
           <strong>WeChat Pay</strong>
-          <p>国内用户可扫码付款。付款备注写产品名和套餐名。</p>
+          <span class="tag manual">可用，需人工确认</span>
+          <p>国内用户可扫码付款。请在备注写产品名和套餐名；付款后通过私信、邮箱或 Discord 发送付款截图和脱敏材料。</p>
           <img class="qr" src="wechat-pay.png" alt="WeChat payment QR">
         </article>
         <article class="card">
           <strong>Alipay</strong>
-          <p>国内用户可扫码付款。付款后通过私信/邮箱发送脱敏材料。</p>
+          <span class="tag manual">可用，需人工确认</span>
+          <p>国内用户可扫码付款。支付宝目前不能自动解锁产品；确认付款后人工交付对应报告、ZIP 或服务说明。</p>
           <img class="qr" src="alipay.jpg" alt="Alipay payment QR">
         </article>
       </div>
@@ -61,26 +97,31 @@
       <div class="grid">
         <article class="card">
           <strong>USDC on Base</strong>
+          <span class="tag backup">备用通道，需人工确认</span>
           <div class="addr">0xc3804857DAF16360D2A051a8ddF088fEd9c108F1</div>
         </article>
         <article class="card">
           <strong>USDC on Solana</strong>
+          <span class="tag backup">备用通道，需人工确认</span>
           <div class="addr">3qGQ5MtoNnMPwbe3UVXGFxZ2XGNuTFRN4C3dcSX3a23a</div>
         </article>
         <article class="card">
           <strong>USDT on Ethereum</strong>
+          <span class="tag backup">备用通道，需人工确认</span>
           <div class="addr">0xc3804857DAF16360D2A051a8ddF088fEd9c108F1</div>
         </article>
       </div>
-      <p>Crypto payments are backup rails. Double-check chain/network before sending. We will never ask for seed phrases, private keys, signatures, approvals, or exchange passwords.</p>
+      <p><b class="warn">链上付款暂不能自动解锁。</b> 转账前请确认网络和币种，转账后发送交易哈希用于人工核对。我们不会要求助记词、私钥、签名、授权或交易所密码。</p>
     </section>
 
     <section>
       <h2>After payment</h2>
-      <p>Send: product name, package, payment screenshot or transaction hash, and anonymized input/report. Contact: tomwillgood@gmail.com, Discord: tianyayiyin, or current social DM.</p>
+      <p>发送：产品名、套餐名、付款截图或交易哈希、脱敏输入/报告。联系：tomwillgood@gmail.com、Discord: tianyayiyin，或当前社交平台私信。</p>
     </section>
   </main>
+
   <footer>CashProof Studio / FateSpark. Entertainment tools are for self-reflection only; business tools are operational support, not legal, tax, accounting, medical, financial, or guaranteed outcome advice.</footer>
+
   <script>
     const plans = {
       "cdrive-rescue:quick-review": "C盘急救箱 - Quick Review / ¥39 or $9",
@@ -104,7 +145,7 @@
     if (selected) {
       const box = document.querySelector("#selectedPlan");
       box.style.display = "block";
-      box.innerHTML = `<strong>Selected package</strong><p style="margin:0;color:var(--text)">${selected}</p><p>付款备注/留言请写这个套餐名，方便快速交付。</p>`;
+      box.innerHTML = `<strong>Selected package</strong><p style="margin:0;color:var(--text)">${selected}</p><p>付款备注/留言请写这个套餐名，方便快速确认和交付。</p>`;
     }
   </script>
 </body>

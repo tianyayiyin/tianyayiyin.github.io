@@ -12,7 +12,7 @@
     <nav>
       <a href="#reading">生成命盘</a>
       <a href="#pricing">深度报告</a>
-      <a class="paylink" href="../pay/">Pay for report</a>
+      <a class="paylink" href="https://tianyayiyin.github.io/pay/">Pay for report</a>
     </nav>
   </header>
 
@@ -96,21 +96,21 @@
         <article>
           <span>个人深度报告</span>
           <strong>¥19 / $5</strong>
-          <p>年度关键词、性格画像、事业/感情/财运提醒、行动建议。</p><a class="button primary" href="../pay/?product=fatespark&plan=deep-report">购买个人深度报告</a>
+          <p>年度关键词、性格画像、事业/感情/财运提醒、行动建议。</p><a class="button primary" href="https://tianyayiyin.github.io/pay/?product=fatespark&plan=deep-report">购买个人深度报告</a>
         </article>
         <article>
           <span>双人合盘</span>
           <strong>¥39 / $9</strong>
-          <p>两个人的节奏差异、相处雷区、沟通建议和关系关键词。</p><a class="button primary" href="../pay/?product=fatespark&plan=compatibility">购买双人合盘</a>
+          <p>两个人的节奏差异、相处雷区、沟通建议和关系关键词。</p><a class="button primary" href="https://tianyayiyin.github.io/pay/?product=fatespark&plan=compatibility">购买双人合盘</a>
         </article>
         <article>
           <span>全年运势包</span>
           <strong>¥99 / $19</strong>
-          <p>12 个月主题、机会窗口、避坑提醒和复盘模板。</p><a class="button primary" href="../pay/?product=fatespark&plan=yearly-report">购买全年运势包</a>
+          <p>12 个月主题、机会窗口、避坑提醒和复盘模板。</p><a class="button primary" href="https://tianyayiyin.github.io/pay/?product=fatespark&plan=yearly-report">购买全年运势包</a>
         </article>
       </div>
       <div class="paybox">
-        <a class="button primary" href="../pay/">海外付款</a>
+        <a class="button primary" href="https://tianyayiyin.github.io/pay/">选择付款方式</a>
         <p>国内支持微信/支付宝。付款后发送昵称、生日、出生时间和问题即可。娱乐参考，不作为医疗、法律、投资或人生重大决策依据。</p>
       </div>
     </section>
@@ -121,7 +121,24 @@
     <span>Entertainment and self-reflection only. No guaranteed predictions.</span>
   </footer>
   <script src="app.js"></script>
+<script>
+  document.querySelectorAll('#pricing article, #offers article, .price-card').forEach((card) => {
+    const link = card.querySelector('a[href*="/pay/"]');
+    if (!link) return;
+    card.style.cursor = 'pointer';
+    card.setAttribute('tabindex', '0');
+    card.setAttribute('role', 'link');
+    card.addEventListener('click', (event) => {
+      if (event.target.closest('a')) return;
+      window.location.href = link.href;
+    });
+    card.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter') window.location.href = link.href;
+    });
+  });
+</script>
 </body>
 </html>
+
 
 

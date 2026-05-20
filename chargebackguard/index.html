@@ -12,7 +12,7 @@
     <nav>
       <a href="#check">Run check</a>
       <a href="#offers">Pricing</a>
-      <a class="paylink" href="../pay/">Pay $19 pack</a>
+      <a class="paylink" href="https://tianyayiyin.github.io/pay/">Pay $19 pack</a>
     </nav>
   </header>
 
@@ -25,7 +25,7 @@
         <div class="actions">
           <a class="button primary" href="#check">Run free dispute check</a>
           <a class="button secondary" href="ChargebackGuard-Free.zip" download>Download offline ZIP</a>
-          <a class="button secondary" href="../pay/">Get $19 response pack</a>
+          <a class="button secondary" href="https://tianyayiyin.github.io/pay/">Get $19 response pack</a>
         </div>
       </div>
       <aside class="risk-card">
@@ -107,20 +107,20 @@ Policy: refunds accepted within 7 days if unused"></textarea>
         <article>
           <h3>Quick Triage</h3>
           <p class="price">$9</p>
-          <p>One anonymized dispute reviewed for missing evidence and risk points.</p><a class="button primary" href="../pay/?product=chargebackguard&plan=quick-triage">Pay / Buy Quick Triage</a>
+          <p>One anonymized dispute reviewed for missing evidence and risk points.</p><a class="button primary" href="https://tianyayiyin.github.io/pay/?product=chargebackguard&plan=quick-triage">Choose and pay / Buy Quick Triage</a>
         </article>
         <article>
           <h3>Response Pack</h3>
           <p class="price">$19</p>
-          <p>Evidence checklist, response structure, and one concise draft for PayPal/Stripe/card dispute.</p><a class="button primary" href="../pay/?product=chargebackguard&plan=response-pack">Pay / Buy Response Pack</a>
+          <p>Evidence checklist, response structure, and one concise draft for PayPal/Stripe/card dispute.</p><a class="button primary" href="https://tianyayiyin.github.io/pay/?product=chargebackguard&plan=response-pack">Choose and pay / Buy Response Pack</a>
         </article>
         <article>
           <h3>Monthly Desk</h3>
           <p class="price">$49</p>
-          <p>Lightweight monthly dispute and payment-risk desk for small operators.</p><a class="button primary" href="../pay/?product=chargebackguard&plan=monthly-desk">Pay / Buy Monthly Desk</a>
+          <p>Lightweight monthly dispute and payment-risk desk for small operators.</p><a class="button primary" href="https://tianyayiyin.github.io/pay/?product=chargebackguard&plan=monthly-desk">Choose and pay / Buy Monthly Desk</a>
         </article>
       </div>
-      <a class="button primary" href="../pay/">Pay on Ko-fi</a>
+      <a class="button primary" href="https://tianyayiyin.github.io/pay/">Choose payment method</a>
     </section>
   </main>
 
@@ -129,7 +129,24 @@ Policy: refunds accepted within 7 days if unused"></textarea>
     <span>ChargebackGuard is an operational checklist, not legal advice.</span>
   </footer>
   <script src="app.js"></script>
+<script>
+  document.querySelectorAll('#pricing article, #offers article, .price-card').forEach((card) => {
+    const link = card.querySelector('a[href*="/pay/"]');
+    if (!link) return;
+    card.style.cursor = 'pointer';
+    card.setAttribute('tabindex', '0');
+    card.setAttribute('role', 'link');
+    card.addEventListener('click', (event) => {
+      if (event.target.closest('a')) return;
+      window.location.href = link.href;
+    });
+    card.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter') window.location.href = link.href;
+    });
+  });
+</script>
 </body>
 </html>
+
 
 

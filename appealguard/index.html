@@ -12,7 +12,7 @@
     <nav>
       <a href="#check">Run check</a>
       <a href="#offers">Pricing</a>
-      <a class="paylink" href="../pay/">Pay $29 appeal pack</a>
+      <a class="paylink" href="https://tianyayiyin.github.io/pay/">Pay $29 appeal pack</a>
     </nav>
   </header>
 
@@ -25,7 +25,7 @@
         <div class="actions">
           <a class="button primary" href="#check">Run free appeal check</a>
           <a class="button secondary" href="AppealGuard-Free.zip" download>Download offline ZIP</a>
-          <a class="button secondary" href="../pay/">Get $29 appeal pack</a>
+          <a class="button secondary" href="https://tianyayiyin.github.io/pay/">Get $29 appeal pack</a>
         </div>
       </div>
       <aside class="risk-card">
@@ -105,20 +105,20 @@ Current appeal: I did nothing wrong, please reactivate my listing."></textarea>
         <article>
           <h3>Quick Triage</h3>
           <p class="price">$9</p>
-          <p>One anonymized notice reviewed for likely issue, missing evidence, and appeal risk.</p><a class="button primary" href="../pay/?product=appealguard&plan=quick-triage">Pay / Buy Quick Triage</a>
+          <p>One anonymized notice reviewed for likely issue, missing evidence, and appeal risk.</p><a class="button primary" href="https://tianyayiyin.github.io/pay/?product=appealguard&plan=quick-triage">Choose and pay / Buy Quick Triage</a>
         </article>
         <article>
           <h3>Appeal Pack</h3>
           <p class="price">$29</p>
-          <p>Root-cause map, evidence checklist, appeal outline, and one concise draft.</p><a class="button primary" href="../pay/?product=appealguard&plan=appeal-pack">Pay / Buy Appeal Pack</a>
+          <p>Root-cause map, evidence checklist, appeal outline, and one concise draft.</p><a class="button primary" href="https://tianyayiyin.github.io/pay/?product=appealguard&plan=appeal-pack">Choose and pay / Buy Appeal Pack</a>
         </article>
         <article>
           <h3>Seller Desk</h3>
           <p class="price">$79</p>
-          <p>Monthly light desk for listing warnings, appeal prep, policy-risk review, and evidence organization.</p><a class="button primary" href="../pay/?product=appealguard&plan=seller-desk">Pay / Buy Seller Desk</a>
+          <p>Monthly light desk for listing warnings, appeal prep, policy-risk review, and evidence organization.</p><a class="button primary" href="https://tianyayiyin.github.io/pay/?product=appealguard&plan=seller-desk">Choose and pay / Buy Seller Desk</a>
         </article>
       </div>
-      <a class="button primary" href="../pay/">Pay on Ko-fi</a>
+      <a class="button primary" href="https://tianyayiyin.github.io/pay/">Choose payment method</a>
     </section>
   </main>
 
@@ -127,7 +127,24 @@ Current appeal: I did nothing wrong, please reactivate my listing."></textarea>
     <span>AppealGuard is operational support, not legal advice or a reinstatement guarantee.</span>
   </footer>
   <script src="app.js"></script>
+<script>
+  document.querySelectorAll('#pricing article, #offers article, .price-card').forEach((card) => {
+    const link = card.querySelector('a[href*="/pay/"]');
+    if (!link) return;
+    card.style.cursor = 'pointer';
+    card.setAttribute('tabindex', '0');
+    card.setAttribute('role', 'link');
+    card.addEventListener('click', (event) => {
+      if (event.target.closest('a')) return;
+      window.location.href = link.href;
+    });
+    card.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter') window.location.href = link.href;
+    });
+  });
+</script>
 </body>
 </html>
+
 
 

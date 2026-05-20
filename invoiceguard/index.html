@@ -12,7 +12,7 @@
     <nav>
       <a href="#check">Run check</a>
       <a href="#offers">Pricing</a>
-      <a class="paylink" href="../pay/">Pay $9 audit</a>
+      <a class="paylink" href="https://tianyayiyin.github.io/pay/">Pay $9 audit</a>
     </nav>
   </header>
 
@@ -25,7 +25,7 @@
         <div class="actions">
           <a class="button primary" href="#check">Run free risk check</a>
           <a class="button secondary" href="InvoiceGuard-Free.zip" download>Download offline ZIP</a>
-          <a class="button secondary" href="../pay/">Get $9 human review</a>
+          <a class="button secondary" href="https://tianyayiyin.github.io/pay/">Get $9 human review</a>
         </div>
       </div>
       <aside class="risk-card" aria-label="risk examples">
@@ -118,19 +118,19 @@
           <h3>Quick Risk Review</h3>
           <p class="price">$9</p>
           <p>One anonymized invoice/payment sample. You get risk flags, duplicate checks, action list, and one payment or collection email.</p>
-          <a class="button primary" href="../pay/?product=invoiceguard&plan=quick-risk-review">Pay / 购买 Quick Risk Review</a>
+          <a class="button primary" href="https://tianyayiyin.github.io/pay/?product=invoiceguard&plan=quick-risk-review">选择并付款 / 购买 Quick Risk Review</a>
         </article>
         <article class="price-card">
           <h3>Overdue Pack</h3>
           <p class="price">$19</p>
           <p>Up to five overdue invoices. Includes reminder sequence, priority order, and a small follow-up tracker.</p>
-          <a class="button primary" href="../pay/?product=invoiceguard&plan=overdue-pack">Pay / 购买 Overdue Pack</a>
+          <a class="button primary" href="https://tianyayiyin.github.io/pay/?product=invoiceguard&plan=overdue-pack">选择并付款 / 购买 Overdue Pack</a>
         </article>
         <article class="price-card">
           <h3>Monthly Desk</h3>
           <p class="price">$49</p>
           <p>Weekly review of anonymized invoice/payment exports for duplicates, overdue items, and suspicious changes.</p>
-          <a class="button primary" href="../pay/?product=invoiceguard&plan=monthly-desk">Pay / 购买 Monthly Desk</a>
+          <a class="button primary" href="https://tianyayiyin.github.io/pay/?product=invoiceguard&plan=monthly-desk">选择并付款 / 购买 Monthly Desk</a>
         </article>
       </div>
     </section>
@@ -147,7 +147,24 @@
   </footer>
 
   <script src="app.js"></script>
+<script>
+  document.querySelectorAll('#pricing article, #offers article, .price-card').forEach((card) => {
+    const link = card.querySelector('a[href*="/pay/"]');
+    if (!link) return;
+    card.style.cursor = 'pointer';
+    card.setAttribute('tabindex', '0');
+    card.setAttribute('role', 'link');
+    card.addEventListener('click', (event) => {
+      if (event.target.closest('a')) return;
+      window.location.href = link.href;
+    });
+    card.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter') window.location.href = link.href;
+    });
+  });
+</script>
 </body>
 </html>
+
 
 

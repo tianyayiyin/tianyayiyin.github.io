@@ -24,6 +24,7 @@
     <section class="hero">
       <p class="eyebrow">Unified payment hub</p>
       <h1>Choose a payment method, then send your anonymized request.</h1>
+      <div id="selectedPlan" class="card" style="display:none;margin:18px 0;max-width:860px"></div>
       <p class="lead">支持 Ko-fi/PayPal、微信、支付宝、USDC/USDT。付款后请发送产品名、套餐名、付款截图或交易哈希，以及脱敏报告/问题。不要发送密码、密钥、身份证、完整订单隐私或客户私人数据。</p>
       <div class="offer">
         <span><b>C盘急救箱</b><em>¥39/$9 report review, ¥99/$19 dev cache plan</em></span>
@@ -80,5 +81,31 @@
     </section>
   </main>
   <footer>CashProof Studio / FateSpark. Entertainment tools are for self-reflection only; business tools are operational support, not legal, tax, accounting, medical, financial, or guaranteed outcome advice.</footer>
+  <script>
+    const plans = {
+      "cdrive-rescue:quick-review": "C盘急救箱 - Quick Review / ¥39 or $9",
+      "cdrive-rescue:dev-cache-move": "C盘急救箱 - Dev Cache Move / ¥99 or $19",
+      "cdrive-rescue:monthly-desk": "C盘急救箱 - Monthly Desk / ¥349 or $49",
+      "fatespark:deep-report": "FateSpark - 个人深度报告 / ¥19 or $5",
+      "fatespark:compatibility": "FateSpark - 双人合盘 / ¥39 or $9",
+      "fatespark:yearly-report": "FateSpark - 全年运势包 / ¥99 or $19",
+      "invoiceguard:quick-risk-review": "InvoiceGuard - Quick Risk Review / ¥39 or $9",
+      "invoiceguard:overdue-pack": "InvoiceGuard - Overdue Pack / ¥99 or $19",
+      "invoiceguard:monthly-desk": "InvoiceGuard - Monthly Desk / ¥349 or $49",
+      "chargebackguard:quick-triage": "ChargebackGuard - Quick Triage / $9",
+      "chargebackguard:response-pack": "ChargebackGuard - Response Pack / $19",
+      "chargebackguard:monthly-desk": "ChargebackGuard - Monthly Desk / $49",
+      "appealguard:quick-triage": "AppealGuard - Quick Triage / $9",
+      "appealguard:appeal-pack": "AppealGuard - Appeal Pack / $29",
+      "appealguard:seller-desk": "AppealGuard - Seller Desk / $79"
+    };
+    const qs = new URLSearchParams(location.search);
+    const selected = plans[`${qs.get("product")}:${qs.get("plan")}`];
+    if (selected) {
+      const box = document.querySelector("#selectedPlan");
+      box.style.display = "block";
+      box.innerHTML = `<strong>Selected package</strong><p style="margin:0;color:var(--text)">${selected}</p><p>付款备注/留言请写这个套餐名，方便快速交付。</p>`;
+    }
+  </script>
 </body>
 </html>

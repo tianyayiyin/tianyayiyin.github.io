@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FateSpark 今日命盘 - 免费生成可分享运势卡</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="../">FateSpark</a>
+    <nav>
+      <a href="#reading">生成命盘</a>
+      <a href="#pricing">深度报告</a>
+      <a class="paylink" href="https://ko-fi.com/leadleakdetector">Pay for report</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <p class="eyebrow">娱乐向命理 / astrology-style reading</p>
+        <h1>输入生日，生成一张可分享的今日命盘。</h1>
+        <p class="lead">FateSpark 把生日、出生时间和你关心的问题，转成年度关键词、性格画像、事业/感情/财运提醒和一段适合发朋友圈/小红书的分享文案。所有计算在浏览器本地完成。</p>
+        <div class="actions">
+          <a class="button primary" href="#reading">免费生成</a>
+          <a class="button secondary" href="FateSpark-Free.zip" download>下载离线 ZIP</a>
+        </div>
+      </div>
+      <aside class="sample-card">
+        <span>今日关键词</span>
+        <strong>换轨、整理、贵人窗口</strong>
+        <p>你不是没有机会，而是需要把分散的注意力收回来。今天适合做一次选择，把拖着你的东西从生活里拿掉。</p>
+      </aside>
+    </section>
+
+    <section id="reading" class="tool-section">
+      <div class="section-head">
+        <p class="eyebrow">Free reading</p>
+        <h2>生成你的命盘卡</h2>
+        <p>不需要真实姓名。生日/时间用于娱乐化生成，不上传服务器。不要输入身份证、住址、电话或隐私内容。</p>
+      </div>
+      <form id="readingForm" class="form-grid">
+        <label>昵称
+          <input id="nickname" placeholder="例如：小林">
+        </label>
+        <label>生日
+          <input id="birthday" type="date">
+        </label>
+        <label>出生时间
+          <input id="birthtime" type="time">
+        </label>
+        <label>当前关注
+          <select id="focus">
+            <option value="career">事业/赚钱</option>
+            <option value="love">感情/关系</option>
+            <option value="study">学习/考试</option>
+            <option value="change">转型/搬家/换工作</option>
+          </select>
+        </label>
+        <label class="wide">想问的一句话
+          <input id="question" placeholder="例如：我今年适合换工作吗？">
+        </label>
+        <button class="button primary wide" type="submit">生成免费命盘</button>
+      </form>
+
+      <div id="result" class="result" hidden>
+        <div class="card-head">
+          <p class="eyebrow">Your FateSpark card</p>
+          <h2 id="resultTitle"></h2>
+        </div>
+        <div class="result-grid">
+          <article><span>主关键词</span><strong id="keyword"></strong></article>
+          <article><span>优势能量</span><strong id="strength"></strong></article>
+          <article><span>注意事项</span><strong id="watchout"></strong></article>
+        </div>
+        <div class="reading-copy">
+          <h3>今日解读</h3>
+          <p id="readingText"></p>
+        </div>
+        <div class="reading-copy">
+          <h3>可分享文案</h3>
+          <pre id="shareText"></pre>
+        </div>
+        <div class="actions">
+          <button id="copyShare" class="button secondary" type="button">复制分享文案</button>
+          <a class="button primary" href="#pricing">解锁深度报告</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing" class="pricing">
+      <p class="eyebrow">Paid reports</p>
+      <h2>免费卡片负责传播，付费报告负责变现</h2>
+      <div class="price-grid">
+        <article>
+          <span>个人深度报告</span>
+          <strong>¥19 / $5</strong>
+          <p>年度关键词、性格画像、事业/感情/财运提醒、行动建议。</p>
+        </article>
+        <article>
+          <span>双人合盘</span>
+          <strong>¥39 / $9</strong>
+          <p>两个人的节奏差异、相处雷区、沟通建议和关系关键词。</p>
+        </article>
+        <article>
+          <span>全年运势包</span>
+          <strong>¥99 / $19</strong>
+          <p>12 个月主题、机会窗口、避坑提醒和复盘模板。</p>
+        </article>
+      </div>
+      <div class="paybox">
+        <a class="button primary" href="https://ko-fi.com/leadleakdetector">海外付款</a>
+        <p>国内支持微信/支付宝。付款后发送昵称、生日、出生时间和问题即可。娱乐参考，不作为医疗、法律、投资或人生重大决策依据。</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>FateSpark</span>
+    <span>Entertainment and self-reflection only. No guaranteed predictions.</span>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>C盘急救箱 - Windows C Drive Rescue</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="../">CashProof Studio</a>
+    <nav>
+      <a href="#download">下载</a>
+      <a href="#pricing">人工诊断</a>
+      <a class="paylink" href="https://ko-fi.com/leadleakdetector">Pay $9 review</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <p class="eyebrow">Windows C drive space rescue</p>
+        <h1>C盘快爆了，先别乱删。</h1>
+        <p class="lead">C盘急救箱会扫描常见空间黑洞：临时文件、浏览器缓存、下载/桌面、npm/pip/Gradle/Docker 开发缓存、大型 C:\ 目录，并生成本地 HTML/CSV 报告。默认只诊断，不误删。</p>
+        <div class="actions">
+          <a class="button primary" href="cdrive-rescue.ps1" download>下载免费脚本</a>
+          <a class="button secondary" href="#run">查看运行方法</a>
+        </div>
+      </div>
+      <aside class="rescue-card">
+        <div><strong>先扫描</strong><span>生成报告，定位大头</span></div>
+        <div><strong>再判断</strong><span>区分安全缓存和个人文件</span></div>
+        <div><strong>可选清理</strong><span>只清旧临时文件/缓存</span></div>
+        <div><strong>可迁移</strong><span>开发缓存建议放 D 盘</span></div>
+      </aside>
+    </section>
+
+    <section id="download" class="strip">
+      <div>
+        <strong>免费可用</strong>
+        <p>下载 PowerShell 脚本，本地运行。本工具不会上传你的文件或报告。</p>
+      </div>
+      <div>
+        <strong>保守安全</strong>
+        <p>默认只生成报告；加参数才清理安全缓存，不碰文档、照片、桌面、下载。</p>
+      </div>
+      <div>
+        <strong>适合开发者</strong>
+        <p>会提示 npm、pip、Gradle、Docker 等缓存的体积和迁移方向。</p>
+      </div>
+    </section>
+
+    <section id="run" class="run">
+      <div class="section-head">
+        <p class="eyebrow">How to run</p>
+        <h2>复制两行命令就能用</h2>
+      </div>
+      <div class="code-grid">
+        <article>
+          <h3>1. 只扫描，不清理</h3>
+          <pre><code>powershell -ExecutionPolicy Bypass -File .\cdrive-rescue.ps1</code></pre>
+        </article>
+        <article>
+          <h3>2. 安全清理缓存</h3>
+          <pre><code>powershell -ExecutionPolicy Bypass -File .\cdrive-rescue.ps1 -CleanSafe</code></pre>
+        </article>
+      </div>
+      <p class="note">报告会生成在桌面 <code>CDriveRescue_Report</code> 文件夹。发给人工诊断时，只发报告或截图，不要发隐私文件、密码、密钥。</p>
+    </section>
+
+    <section class="checks">
+      <p class="eyebrow">What it checks</p>
+      <h2>它真正能帮你看什么</h2>
+      <div class="grid">
+        <article><h3>常见缓存</h3><p>Windows Temp、用户 Temp、Chrome/Edge 缓存。</p></article>
+        <article><h3>个人大目录</h3><p>Downloads、Desktop，只提示，不自动删除。</p></article>
+        <article><h3>开发者缓存</h3><p>npm、pip、Gradle、Docker，给出迁移到 D 盘的建议。</p></article>
+        <article><h3>C盘大目录</h3><p>列出 C:\ 下最大的 20 个目录，先定位再处理。</p></article>
+      </div>
+    </section>
+
+    <section id="pricing" class="pricing">
+      <p class="eyebrow">Paid help</p>
+      <h2>看得懂报告，才不会乱删</h2>
+      <div class="price-grid">
+        <article>
+          <span>Quick Review</span>
+          <strong>¥39 / $9</strong>
+          <p>看一份脱敏报告，告诉你最安全的释放空间路径。</p>
+        </article>
+        <article>
+          <span>Dev Cache Move</span>
+          <strong>¥99 / $19</strong>
+          <p>开发者电脑专项：npm、pip、Gradle、Docker、模型缓存迁移方案。</p>
+        </article>
+        <article>
+          <span>Monthly Desk</span>
+          <strong>¥349 / $49</strong>
+          <p>每月一次空间体检，适合长期 C 盘紧张的工作电脑。</p>
+        </article>
+      </div>
+      <div class="paybox">
+        <a class="button primary" href="https://ko-fi.com/leadleakdetector">海外用户付款</a>
+        <p>国内用户可用微信/支付宝二维码。只接收脱敏报告，不接收账号密码、密钥、隐私文件。</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>CashProof Studio</span>
+    <span>Local-first Windows cleanup assistant. Review before deleting.</span>
+  </footer>
+</body>
+</html>

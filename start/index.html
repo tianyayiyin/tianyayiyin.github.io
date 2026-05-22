@@ -1,0 +1,85 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Start Here - CashProof Studio</title>
+  <style>
+    :root{--bg:#0f1217;--panel:#171d25;--line:#334155;--text:#f8fafc;--muted:#b6c2cf;--green:#34d399;--yellow:#facc15;--blue:#60a5fa;--red:#fb7185}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",sans-serif}a{color:inherit}.top{display:flex;justify-content:space-between;align-items:center;padding:18px 6vw;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(15,18,23,.96);z-index:2}.brand{font-weight:950;text-decoration:none}.hero{padding:58px 6vw 30px}.eyebrow{color:var(--green);font-weight:950;text-transform:uppercase;font-size:13px;letter-spacing:.08em}h1{font-size:clamp(38px,7vw,74px);line-height:.98;margin:0 0 18px}h2{font-size:clamp(28px,4vw,44px);margin:0 0 14px}p{color:var(--muted);line-height:1.65}.lead{font-size:20px;max-width:960px}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;padding:24px 6vw 56px}.card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:22px}.tag{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:5px 9px;font-size:12px;font-weight:900;color:#dbeafe}.price{font-size:32px;font-weight:950;color:var(--yellow);margin:8px 0}.btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}.btn{display:inline-flex;min-height:44px;align-items:center;justify-content:center;padding:0 15px;border-radius:7px;border:1px solid var(--line);text-decoration:none;font-weight:900}.primary{background:var(--green);border-color:var(--green);color:#062014}.secondary{background:#202936}.note{margin:0 6vw 46px;padding:18px 22px;border:1px solid rgba(251,191,36,.4);background:rgba(251,191,36,.08);border-radius:8px}.cn{color:#e5e7eb}.red{color:var(--red);font-weight:950}@media(max-width:980px){.grid{grid-template-columns:1fr}.top{align-items:flex-start;gap:12px;flex-direction:column}}
+  </style>
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="/">CashProof Studio</a>
+    <a class="btn primary" href="/pay/">Pay / 付款</a>
+  </header>
+  <main>
+    <section class="hero">
+      <p class="eyebrow">Start here</p>
+      <h1>Pick one problem. Try the tool. Pay only if you need help.</h1>
+      <p class="lead">CashProof Studio is a small toolkit for urgent, practical problems: full C drive, suspicious crypto wallet links, invoice/payment risk, chargebacks, marketplace appeals, and shareable fortune reports. Most tools run in the browser first. Paid help is optional.</p>
+      <p class="lead cn">中文用户：先选问题，免费试用；需要人工复核、报告、打包交付时再付款。微信/支付宝目前是人工确认交付，海外 Ko-fi/PayPal 可用。</p>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <span class="tag">Most concrete / 最好理解</span>
+        <h2>C Drive Rescue / C盘急救箱</h2>
+        <p class="price">Free scan + $9 / ¥39 review</p>
+        <p>For Windows users whose C drive is full. Scan large folders, dev caches, browser cache, WeChat files, downloads, and safe cleanup candidates.</p>
+        <p class="cn">适合：C盘满了、微信文件太大、电脑变慢、AppData 不敢删、想把东西迁到 D 盘。</p>
+        <div class="btns"><a class="btn primary" href="/cdrive-rescue/">Open / 下载工具</a><a class="btn secondary" href="/pay/?product=cdrive-rescue&plan=quick-review">Pay for review</a></div>
+      </article>
+
+      <article class="card">
+        <span class="tag">Crypto safety / overseas only</span>
+        <h2>WalletGuard</h2>
+        <p class="price">Free check + $9 triage</p>
+        <p>For suspicious airdrops, wallet-connect pages, blind signatures, unlimited approvals, Discord DMs, fake mints, and typo domains.</p>
+        <p><span class="red">Never</span> send seed phrases, private keys, wallet signatures, or exchange passwords. This is safety triage, not trading advice.</p>
+        <div class="btns"><a class="btn primary" href="/walletguard/">Run checker</a><a class="btn secondary" href="/pay/?product=walletguard&plan=quick-triage">Pay for triage</a></div>
+      </article>
+
+      <article class="card">
+        <span class="tag">Seller cash defense</span>
+        <h2>ChargebackGuard</h2>
+        <p class="price">Free check + $19 pack</p>
+        <p>For PayPal, Stripe, card, marketplace, and customer dispute evidence. Turn a messy dispute into an evidence checklist and response structure.</p>
+        <div class="btns"><a class="btn primary" href="/chargebackguard/">Open checker</a><a class="btn secondary" href="/pay/?product=chargebackguard&plan=response-pack">Pay for pack</a></div>
+      </article>
+
+      <article class="card">
+        <span class="tag">Before paying vendors</span>
+        <h2>InvoiceGuard</h2>
+        <p class="price">Free check + $9 / ¥39 review</p>
+        <p>Check duplicate invoices, changed bank details, overdue follow-ups, missing due dates, and amount mismatch before money moves.</p>
+        <div class="btns"><a class="btn primary" href="/invoiceguard/">Open checker</a><a class="btn secondary" href="/pay/?product=invoiceguard&plan=quick-risk-review">Pay for review</a></div>
+      </article>
+
+      <article class="card">
+        <span class="tag">Marketplace sellers</span>
+        <h2>AppealGuard</h2>
+        <p class="price">Free check + $29 pack</p>
+        <p>For Amazon, Etsy, eBay, Shopify, and marketplace suspensions, holds, listing removals, and plan-of-action drafts.</p>
+        <div class="btns"><a class="btn primary" href="/appealguard/">Open checker</a><a class="btn secondary" href="/pay/?product=appealguard&plan=appeal-pack">Pay for pack</a></div>
+      </article>
+
+      <article class="card">
+        <span class="tag">Viral consumer product</span>
+        <h2>FateSpark</h2>
+        <p class="price">Free card + $5 report</p>
+        <p>Generate a shareable astrology-style fortune card, then upgrade to a deeper entertainment/self-reflection report.</p>
+        <p class="cn">娱乐和自我反思用途，不承诺现实结果。</p>
+        <div class="btns"><a class="btn primary" href="/fatespark/">Generate card</a><a class="btn secondary" href="/pay/?product=fatespark&plan=deep-report">Pay for report</a></div>
+      </article>
+    </section>
+
+    <section class="note">
+      <h2>How customers get the product</h2>
+      <p>1. Open a product above. 2. Run the free local check or read the guide. 3. If they need human review or a packaged report, pay through Ko-fi/PayPal or manual WeChat/Alipay/crypto confirmation. 4. Send only anonymized samples or reports. 5. We deliver the review/report/template manually unless the Ko-fi Shop item is explicitly marked as auto-delivery.</p>
+      <p class="cn">客户路径：点产品页 → 免费试用 → 需要人工复核才付款 → 发脱敏材料和付款凭证 → 交付报告/ZIP/建议。不要发密码、私钥、助记词、验证码、身份证、完整客户隐私。</p>
+    </section>
+  </main>
+</body>
+</html>

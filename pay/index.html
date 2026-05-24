@@ -17,15 +17,15 @@
     .secondary{background:#202936}
     .hero{padding:56px 6vw 32px}
     .eyebrow{color:var(--green);font-size:13px;font-weight:950;text-transform:uppercase;letter-spacing:.08em}
-    h1{font-size:clamp(38px,7vw,72px);line-height:.98;margin:0 0 18px}
-    h2{font-size:clamp(26px,4vw,42px);margin:0 0 16px}
+    h1{font-size:clamp(34px,6vw,68px);line-height:1;margin:0 0 18px}
+    h2{font-size:clamp(25px,4vw,40px);margin:0 0 16px}
     h3{margin:0 0 8px}
     p{color:var(--muted);line-height:1.65}
     .lead{max-width:980px;font-size:20px}
     section{padding:38px 6vw;border-top:1px solid var(--line)}
     .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
     .card{padding:22px;border:1px solid var(--line);border-radius:8px;background:var(--panel)}
-    .card strong{display:block;margin-bottom:10px;color:var(--gold);font-size:25px}
+    .card strong{display:block;margin-bottom:10px;color:var(--gold);font-size:24px}
     .price{color:var(--gold);font-size:32px;font-weight:950;margin:6px 0 8px}
     .tag{display:inline-flex;align-items:center;min-height:30px;padding:0 10px;border-radius:999px;border:1px solid var(--line);font-size:13px;font-weight:950;margin:0 8px 12px 0}
     .ok{background:rgba(52,211,153,.12);color:#a7f3d0;border-color:rgba(52,211,153,.45)}
@@ -35,14 +35,15 @@
     .red{color:var(--red);font-weight:950}
     .qr{width:100%;max-width:300px;border-radius:8px;background:#fff;padding:10px}
     .addr{word-break:break-all;background:#0b1020;border:1px solid var(--line);border-radius:7px;padding:12px;color:#d1fae5;font-family:Consolas,"Cascadia Code",monospace}
-    .steps{counter-reset:step;display:grid;gap:10px;margin-top:18px}
+    .steps{display:grid;gap:10px;margin-top:18px}
     .steps p{margin:0;padding:12px 14px;border:1px solid var(--line);border-radius:8px;background:#101722}
     .offer{display:grid;gap:12px}
-    .offer .row{display:flex;justify-content:space-between;gap:12px;align-items:center;border-bottom:1px solid var(--line);padding:12px 0;color:var(--muted)}
+    .row{display:flex;justify-content:space-between;gap:12px;align-items:center;border-bottom:1px solid var(--line);padding:12px 0;color:var(--muted)}
     .row b{color:var(--text)}
     .row a{white-space:nowrap}
+    .notice{border-left:4px solid var(--gold);padding:14px 16px;background:#111827;border-radius:8px;margin:18px 0;max-width:980px}
     footer{padding:28px 6vw;border-top:1px solid var(--line);color:var(--muted)}
-    @media(max-width:980px){.grid{grid-template-columns:1fr}.top{align-items:flex-start;flex-direction:column}.row{display:block}.row a{margin-top:10px}}
+    @media(max-width:980px){.grid{grid-template-columns:1fr}.top{align-items:flex-start;flex-direction:column}.row{display:block}.row a{margin-top:10px}.btn{width:100%}}
   </style>
 </head>
 <body>
@@ -50,58 +51,61 @@
     <a class="brand" href="../">CashProof Studio</a>
     <nav>
       <a class="btn secondary" href="../start/">Start / 产品入口</a>
-      <a class="btn primary" href="https://ko-fi.com/leadleakdetector">Pay on Ko-fi / PayPal</a>
+      <a class="btn primary" href="https://ko-fi.com/leadleakdetector">Pay by Ko-fi / PayPal</a>
     </nav>
   </header>
 
   <main>
     <section class="hero">
-      <p class="eyebrow">Payment hub</p>
-      <h1>Pay, then send the product name and anonymized material.</h1>
+      <p class="eyebrow">Payment hub / 下单付款</p>
+      <h1>Pay first, then send the product name and anonymized material.</h1>
       <div id="selectedPlan" class="card" style="display:none;margin:18px 0;max-width:900px"></div>
-      <p class="lead">Ko-fi / PayPal is the fastest overseas payment route. WeChat, Alipay, USDC and USDT are available as manual-confirmation backup routes. Unless a Ko-fi Shop item is clearly marked as auto-delivery, delivery is manual after payment confirmation.</p>
-      <p class="lead">中文说明：海外付款优先用 Ko-fi / PayPal。微信、支付宝、USDC、USDT 可以收款，但目前需要人工确认和人工交付。付款后请发送产品名、套餐名、付款截图或交易哈希，以及脱敏后的材料。</p>
-      <p class="lead"><b style="color:var(--gold)">First-order break-in offer:</b> C Drive Rescue quick review is $5 / ¥19 today. WalletGuard quick triage is $5 today. This is for the first small review only, with manual delivery.</p>
-      <p class="lead">今日破冰价：C盘急救箱快速复核 ¥19；WalletGuard 快速风险复核 $5。仅限首个小复核，人工确认后交付。</p>
+      <p class="lead">Ko-fi / PayPal is the fastest route. WeChat Pay, Alipay, USDC and USDT are available, but they require manual confirmation and manual delivery.</p>
+      <p class="lead">中文说明：海外付款优先使用 Ko-fi / PayPal。微信、支付宝、USDC、USDT 也可以收款，但目前需要人工确认和人工交付。付款后请发送产品名、套餐名、付款截图或交易哈希，以及脱敏后的材料。</p>
+      <div class="notice">
+        <b>First-order offer / 今日破冰价</b>
+        <p>C Drive Rescue quick review: <b>$5 / ¥19</b>. WalletGuard wallet-risk triage: <b>$5</b>. Delivery is manual after payment confirmation.</p>
+        <p>C盘急救箱快速复核：<b>¥19 / $5</b>。WalletGuard 钱包风险快速复核：<b>$5</b>。付款确认后人工交付。</p>
+      </div>
       <div class="steps">
-        <p><b>1. Choose a product.</b> Start from <a href="../start/">CashProof Start</a> if you are not sure.</p>
-        <p><b>2. Pay.</b> Use Ko-fi / PayPal for the fastest route, or scan WeChat / Alipay for manual delivery.</p>
+        <p><b>1. Choose a package.</b> If unsure, start from <a href="../start/">CashProof Start</a>.</p>
+        <p><b>2. Pay.</b> Use Ko-fi / PayPal for the fastest route, or scan WeChat / Alipay for manual confirmation.</p>
         <p><b>3. Send proof and anonymized input.</b> Email: <b>tomwillgood@gmail.com</b> or Discord: <b>tianyayiyin</b>.</p>
-        <p><b>4. Delivery.</b> We return a review/report/checklist. No guaranteed results, no legal/financial advice.</p>
+        <p><b>4. Delivery.</b> You receive a review/report/checklist. No guaranteed results, no legal/financial/trading advice.</p>
       </div>
     </section>
 
     <section>
-      <h2>Quick paid offers</h2>
+      <h2>Quick paid offers / 快速下单</h2>
       <div class="offer">
-        <div class="row"><span><b>C Drive Rescue</b> - First quick cleanup review</span><span>$5 / ¥19</span><a class="btn primary" href="https://ko-fi.com/leadleakdetector">Pay</a></div>
-        <div class="row"><span><b>C Drive Rescue</b> - Dev cache move plan</span><span>$19 / ¥99</span><a class="btn primary" href="https://ko-fi.com/leadleakdetector">Pay</a></div>
-        <div class="row"><span><b>WalletGuard</b> - First wallet / airdrop risk triage</span><span>$5</span><a class="btn primary" href="https://ko-fi.com/leadleakdetector">Pay</a></div>
-        <div class="row"><span><b>WalletGuard</b> - Airdrop due-diligence pack</span><span>$19</span><a class="btn primary" href="https://ko-fi.com/leadleakdetector">Pay</a></div>
-        <div class="row"><span><b>ChargebackGuard</b> - Dispute response pack</span><span>$19</span><a class="btn primary" href="https://ko-fi.com/leadleakdetector">Pay</a></div>
-        <div class="row"><span><b>InvoiceGuard</b> - Quick invoice/payment risk review</span><span>$9 / ¥39</span><a class="btn primary" href="https://ko-fi.com/leadleakdetector">Pay</a></div>
-        <div class="row"><span><b>AppealGuard</b> - Marketplace appeal pack</span><span>$29</span><a class="btn primary" href="https://ko-fi.com/leadleakdetector">Pay</a></div>
-        <div class="row"><span><b>FateSpark</b> - Entertainment deep report</span><span>$5 / ¥19</span><a class="btn primary" href="https://ko-fi.com/leadleakdetector">Pay</a></div>
+        <div class="row"><span><b>C Drive Rescue</b> - First quick cleanup review / C盘快速复核</span><span>$5 / ¥19</span><a class="btn primary" href="https://ko-fi.com/leadleakdetector">Pay</a></div>
+        <div class="row"><span><b>C Drive Rescue</b> - Developer cache move plan / 开发缓存迁移方案</span><span>$19 / ¥99</span><a class="btn primary" href="https://ko-fi.com/leadleakdetector">Pay</a></div>
+        <div class="row"><span><b>WalletGuard</b> - Wallet / airdrop risk triage / 钱包空投风险复核</span><span>$5</span><a class="btn primary" href="https://ko-fi.com/leadleakdetector">Pay</a></div>
+        <div class="row"><span><b>ChargebackGuard</b> - Dispute response pack / 拒付材料包</span><span>$19</span><a class="btn primary" href="https://ko-fi.com/leadleakdetector">Pay</a></div>
+        <div class="row"><span><b>InvoiceGuard</b> - Invoice/payment risk review / 发票付款风险复核</span><span>$9 / ¥39</span><a class="btn primary" href="https://ko-fi.com/leadleakdetector">Pay</a></div>
+        <div class="row"><span><b>AppealGuard</b> - Marketplace appeal pack / 平台申诉包</span><span>$29</span><a class="btn primary" href="https://ko-fi.com/leadleakdetector">Pay</a></div>
+        <div class="row"><span><b>FateSpark</b> - Entertainment deep report / 娱乐解读报告</span><span>$5 / ¥19</span><a class="btn primary" href="https://ko-fi.com/leadleakdetector">Pay</a></div>
       </div>
     </section>
 
     <section>
-      <h2>Payment methods</h2>
+      <h2>Payment methods / 收款方式</h2>
       <div class="grid">
         <article class="card">
           <strong>Ko-fi / PayPal</strong>
           <span class="tag ok">Fastest route</span>
-          <p><b class="price">Available now.</b> In the Ko-fi message, write the product and package, for example: <b>WalletGuard - $5 first triage</b> or <b>C Drive Rescue - $5 first review</b>.</p>
+          <p><b class="price">Available now.</b> In the Ko-fi message, write the product and package, for example: <b>C Drive Rescue - $5 first review</b>.</p>
+          <p>最快方式。付款留言里写清产品和套餐，例如：<b>C盘急救箱 - ¥19 快速复核</b>。</p>
           <a class="btn primary" href="https://ko-fi.com/leadleakdetector">Pay on Ko-fi</a>
         </article>
         <article class="card">
-          <strong>WeChat Pay</strong>
+          <strong>WeChat Pay / 微信</strong>
           <span class="tag manual">Manual confirmation</span>
-          <p>微信付款后，请通过微信/邮箱/Discord 发送付款截图、产品名、套餐名和脱敏材料。微信无法自动解锁产品。</p>
+          <p>微信付款后，请通过微信、邮箱或 Discord 发送付款截图、产品名、套餐名和脱敏材料。微信付款不会自动解锁产品。</p>
           <img class="qr" src="wechat-pay.png" alt="WeChat payment QR">
         </article>
         <article class="card">
-          <strong>Alipay</strong>
+          <strong>Alipay / 支付宝</strong>
           <span class="tag manual">Manual confirmation</span>
           <p>支付宝付款后，请发送付款截图、产品名、套餐名和脱敏材料。支付宝目前是人工确认、人工交付。</p>
           <img class="qr" src="alipay.jpg" alt="Alipay payment QR">
@@ -110,7 +114,7 @@
     </section>
 
     <section>
-      <h2>Crypto backup</h2>
+      <h2>Crypto backup / 加密货币备用</h2>
       <div class="grid">
         <article class="card">
           <strong>USDC on Base</strong>
@@ -129,11 +133,13 @@
         </article>
       </div>
       <p><b class="warn">Crypto payments do not auto-unlock products.</b> Send the transaction hash after payment. We will never ask for seed phrases, private keys, wallet signatures, approvals, exchange passwords, or 2FA codes.</p>
+      <p><b class="warn">加密货币付款不会自动解锁。</b> 付款后请发送交易哈希。我们不会索要助记词、私钥、签名授权、交易所密码或验证码。</p>
     </section>
 
     <section>
-      <h2>Safety rules</h2>
-      <p>Do not send passwords, seed phrases, private keys, identity documents, full customer records, tax IDs, wallet signatures, exchange credentials, or private customer data. Send anonymized samples only.</p>
+      <h2>Safety / 安全边界</h2>
+      <p>Do not send passwords, seed phrases, private keys, identity documents, tax IDs, wallet signatures, exchange credentials, or private customer data. Send anonymized samples only.</p>
+      <p>不要发送密码、助记词、私钥、身份证件、税号、钱包签名、交易所账号密码或客户隐私数据。只发送脱敏材料。</p>
       <p class="red">Business tools provide operational support only. FateSpark is entertainment/self-reflection. No guaranteed revenue, legal outcome, financial result, or trading result.</p>
     </section>
   </main>
@@ -144,29 +150,19 @@
     const plans = {
       "cdrive-rescue:quick-review": "C Drive Rescue - First quick cleanup review / $5 or ¥19",
       "cdrive-rescue:dev-cache-move": "C Drive Rescue - Dev cache move plan / $19 or ¥99",
-      "cdrive-rescue:monthly-desk": "C Drive Rescue - Monthly desk / $49 or ¥349",
-      "fatespark:deep-report": "FateSpark - Deep report / $5 or ¥19",
-      "fatespark:compatibility": "FateSpark - Compatibility / $9 or ¥39",
-      "fatespark:yearly-report": "FateSpark - Yearly entertainment report / $19 or ¥99",
       "walletguard:quick-triage": "WalletGuard - First wallet risk triage / $5",
       "walletguard:airdrop-pack": "WalletGuard - Airdrop due-diligence pack / $19",
-      "walletguard:safety-desk": "WalletGuard - Discord safety desk / $49",
       "invoiceguard:quick-risk-review": "InvoiceGuard - Quick risk review / $9 or ¥39",
-      "invoiceguard:overdue-pack": "InvoiceGuard - Overdue pack / $19 or ¥99",
-      "invoiceguard:monthly-desk": "InvoiceGuard - Monthly desk / $49 or ¥349",
       "chargebackguard:quick-triage": "ChargebackGuard - Quick triage / $9",
-      "chargebackguard:response-pack": "ChargebackGuard - Response pack / $19",
-      "chargebackguard:monthly-desk": "ChargebackGuard - Monthly desk / $49",
-      "appealguard:quick-triage": "AppealGuard - Quick triage / $9",
       "appealguard:appeal-pack": "AppealGuard - Appeal pack / $29",
-      "appealguard:seller-desk": "AppealGuard - Seller desk / $79"
+      "fatespark:deep-report": "FateSpark - Deep report / $5 or ¥19"
     };
     const qs = new URLSearchParams(location.search);
     const selected = plans[`${qs.get("product")}:${qs.get("plan")}`];
     if (selected) {
       const box = document.querySelector("#selectedPlan");
       box.style.display = "block";
-      box.innerHTML = `<strong>Selected package</strong><p style="margin:0;color:var(--text)">${selected}</p><p>Write this package name in the Ko-fi message or manual payment note.</p>`;
+      box.innerHTML = `<strong>Selected package / 已选择套餐</strong><p style="margin:0;color:var(--text)">${selected}</p><p>Write this package name in the Ko-fi message or manual payment note. 付款留言请写这个套餐名。</p>`;
     }
   </script>
 </body>

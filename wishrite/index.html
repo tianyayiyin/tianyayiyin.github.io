@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WishRite - a quiet oracle ritual for uncertain moments</title>
+  <meta name="description" content="Set an intention, receive a symbolic oracle, and keep a private blessing card. WishRite is a reflection and emotional-grounding ritual, not a guarantee.">
+  <style>
+    :root{
+      --bg:#0b0c10;--ink:#f7efe3;--muted:#c8b9a5;--line:#3d342b;--panel:#151116;--panel2:#1c171f;
+      --gold:#e9c46a;--rose:#e88ea5;--violet:#9b8cff;--teal:#87d8c4;--shadow:rgba(0,0,0,.36)
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    a{color:inherit}
+    .top{position:sticky;top:0;z-index:10;display:flex;justify-content:space-between;gap:14px;align-items:center;padding:16px 5vw;border-bottom:1px solid rgba(233,196,106,.22);background:rgba(11,12,16,.92);backdrop-filter:blur(12px)}
+    .brand{font-weight:950;text-decoration:none}.top nav{display:flex;gap:10px;flex-wrap:wrap}
+    .btn{display:inline-flex;min-height:44px;align-items:center;justify-content:center;padding:0 16px;border:1px solid rgba(233,196,106,.34);border-radius:7px;text-decoration:none;font-weight:900;cursor:pointer;background:#171019;color:var(--ink)}
+    .primary{background:var(--gold);border-color:var(--gold);color:#211609}.rose{background:#2a1620;border-color:rgba(232,142,165,.46)}
+    .hero{position:relative;min-height:92vh;display:grid;grid-template-columns:minmax(0,1fr) minmax(320px,.72fr);gap:36px;align-items:center;padding:72px 5vw 52px;overflow:hidden}
+    #sky{position:absolute;inset:0;width:100%;height:100%;opacity:.86}
+    .hero:after{content:"";position:absolute;inset:auto 0 0;height:28vh;background:linear-gradient(0deg,var(--bg),transparent);pointer-events:none}
+    .hero>*{position:relative;z-index:1}
+    .eyebrow{color:var(--teal);font-weight:950;text-transform:uppercase;font-size:13px}
+    h1{font-size:clamp(46px,7.4vw,96px);line-height:.92;margin:0 0 22px;max-width:980px}
+    h2{font-size:clamp(28px,4vw,48px);line-height:1.05;margin:0 0 16px}
+    h3{margin:0 0 10px}
+    p{color:var(--muted);line-height:1.65}.lead{font-size:20px;max-width:760px}
+    .oracle-panel,.card,.result{border:1px solid rgba(233,196,106,.28);background:linear-gradient(180deg,rgba(28,23,31,.94),rgba(15,13,18,.94));border-radius:8px;box-shadow:0 24px 80px var(--shadow)}
+    .oracle-panel{padding:22px}.field{display:grid;gap:7px;margin-bottom:14px}label{font-weight:900;color:#efe5d3;font-size:14px}
+    input,textarea,select{width:100%;border:1px solid rgba(233,196,106,.28);background:#09080c;color:var(--ink);border-radius:7px;padding:12px 13px;font:inherit}textarea{min-height:96px;resize:vertical}
+    .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.fine{font-size:12px;color:#a99d8d}
+    section{padding:58px 5vw;border-top:1px solid rgba(233,196,106,.2)}
+    .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.card{padding:22px}
+    .price{font-size:36px;font-weight:950;color:var(--gold);margin:8px 0}.tag{display:inline-flex;border:1px solid rgba(233,196,106,.34);border-radius:999px;padding:5px 9px;color:#f4df9a;font-size:12px;font-weight:950;margin-bottom:12px}
+    .result{display:none;padding:22px;margin-top:20px}.result.show{display:block}.sigil{font-size:52px;line-height:1;margin-bottom:12px}.oracleText{font-size:22px;color:#fff2dc;line-height:1.45}
+    .blessing{margin-top:16px;padding:16px;border:1px solid rgba(232,142,165,.34);border-radius:8px;background:rgba(232,142,165,.09)}
+    .steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.steps div{border:1px solid rgba(233,196,106,.22);border-radius:8px;padding:18px;background:#121016}
+    .addr{word-break:break-all;font-family:Consolas,"Cascadia Code",monospace;color:#d8fff4;background:#080b0c;border:1px solid rgba(135,216,196,.35);border-radius:7px;padding:11px;margin-top:10px}
+    .payment{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,.8fr);gap:16px;align-items:start}.notice{border-left:4px solid var(--gold);background:#15120d;padding:16px;border-radius:8px}
+    footer{padding:28px 5vw;border-top:1px solid rgba(233,196,106,.2);color:var(--muted)}
+    @media(max-width:980px){.hero,.grid,.steps,.payment{grid-template-columns:1fr}.top{align-items:flex-start;flex-direction:column}.top nav{width:100%}.btn{width:100%}h1{font-size:44px}}
+  </style>
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="/">WishRite by CashProof Studio</a>
+    <nav>
+      <a class="btn" href="/start/">All tools</a>
+      <a class="btn rose" href="#pricing">Blessing options</a>
+      <a class="btn primary" href="https://ko-fi.com/leadleakdetector">Ko-fi</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <canvas id="sky" aria-hidden="true"></canvas>
+      <div>
+        <p class="eyebrow">A symbolic oracle ritual</p>
+        <h1>For the moment when you need a sign.</h1>
+        <p class="lead">Set one intention. Receive a private oracle, a small action, a lucky color, and a blessing card you can keep. WishRite is for reflection, hope, and emotional grounding - never a guarantee.</p>
+        <div class="actions">
+          <a class="btn primary" href="#ritual">Begin the ritual</a>
+          <a class="btn rose" href="#pricing">Upgrade the blessing</a>
+        </div>
+        <p class="fine">No medical, legal, financial, trading, or supernatural guarantees. Do not use this instead of professional help.</p>
+      </div>
+
+      <form id="ritual" class="oracle-panel">
+        <h2>Open your oracle</h2>
+        <div class="field">
+          <label for="name">Name or initials</label>
+          <input id="name" maxlength="40" placeholder="A name only you recognize">
+        </div>
+        <div class="field">
+          <label for="wish">What are you asking for?</label>
+          <textarea id="wish" maxlength="260" placeholder="Money luck, family health, love, protection, career clarity, calm sleep..."></textarea>
+        </div>
+        <div class="field">
+          <label for="type">Intention type</label>
+          <select id="type">
+            <option value="prosperity">Prosperity and money luck</option>
+            <option value="health">Family health and protection</option>
+            <option value="love">Love and relationship peace</option>
+            <option value="career">Career decision and timing</option>
+            <option value="calm">Calm mind tonight</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="tone">Oracle tone</label>
+          <select id="tone">
+            <option value="gentle">Gentle</option>
+            <option value="mystic">Mystic</option>
+            <option value="direct">Direct</option>
+            <option value="moon">Moonlit</option>
+          </select>
+        </div>
+        <button class="btn primary" type="submit">Reveal my sign</button>
+        <div id="result" class="result">
+          <div class="sigil" id="sigil">✦</div>
+          <div class="oracleText" id="oracleText"></div>
+          <div class="blessing" id="blessing"></div>
+          <div class="actions">
+            <button class="btn rose" type="button" id="copyCard">Copy blessing card</button>
+            <a class="btn primary" href="#pricing">Make it a full ritual</a>
+          </div>
+        </div>
+      </form>
+    </section>
+
+    <section>
+      <p class="eyebrow">How it works</p>
+      <h2>A small ritual, not a false promise.</h2>
+      <div class="steps">
+        <div><h3>1. Name it</h3><p>Writing the wish makes the feeling concrete instead of letting it loop in the dark.</p></div>
+        <div><h3>2. Receive a sign</h3><p>The oracle gives a symbolic message, lucky color, and one action for today.</p></div>
+        <div><h3>3. Keep the card</h3><p>Copy or save your blessing. Use it as a quiet anchor when anxiety spikes.</p></div>
+        <div><h3>4. Upgrade only if it helps</h3><p>Paid options create a longer ritual letter or a private blessing card.</p></div>
+      </div>
+    </section>
+
+    <section id="pricing">
+      <p class="eyebrow">Blessing options</p>
+      <h2>Pay a small token only if the ritual lands.</h2>
+      <div class="grid">
+        <article class="card">
+          <span class="tag">Starter</span>
+          <h3>Private blessing card</h3>
+          <p class="price">$3</p>
+          <p>A polished symbolic blessing based on your intention, with a short action and lucky color.</p>
+          <a class="btn primary" href="https://ko-fi.com/leadleakdetector">Pay on Ko-fi</a>
+        </article>
+        <article class="card">
+          <span class="tag">Most natural</span>
+          <h3>Seven-day intention letter</h3>
+          <p class="price">$7</p>
+          <p>A longer oracle letter with seven daily prompts for focus, calm, prosperity, or protection.</p>
+          <a class="btn primary" href="https://ko-fi.com/leadleakdetector">Pay on Ko-fi</a>
+        </article>
+        <article class="card">
+          <span class="tag">Deep ritual</span>
+          <h3>Prosperity or protection rite</h3>
+          <p class="price">$19</p>
+          <p>A custom symbolic ritual letter, written as a keepsake. Reflection and entertainment only.</p>
+          <a class="btn primary" href="https://ko-fi.com/leadleakdetector">Pay on Ko-fi</a>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <p class="eyebrow">Payment</p>
+      <h2>Overseas-only payment rails.</h2>
+      <div class="payment">
+        <div class="notice">
+          <h3>Ko-fi / PayPal</h3>
+          <p>Use Ko-fi for the fastest route. In the message, write: <b>WishRite - $3 card</b>, <b>WishRite - $7 letter</b>, or <b>WishRite - $19 ritual</b>.</p>
+          <a class="btn primary" href="https://ko-fi.com/leadleakdetector">Pay on Ko-fi</a>
+        </div>
+        <div class="card">
+          <h3>Crypto backup</h3>
+          <p>Manual confirmation only. Send the transaction hash and your wish text to <b>tomwillgood@gmail.com</b>.</p>
+          <p><b>USDC on Base</b></p><div class="addr">0xc3804857DAF16360D2A051a8ddF088fEd9c108F1</div>
+          <p><b>USDC on Solana</b></p><div class="addr">3qGQ5MtoNnMPwbe3UVXGFxZ2XGNuTFRN4C3dcSX3a23a</div>
+          <p><b>USDT on Ethereum</b></p><div class="addr">0xc3804857DAF16360D2A051a8ddF088fEd9c108F1</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <p class="eyebrow">Safety boundary</p>
+      <h2>What WishRite is, and is not.</h2>
+      <p>WishRite is a symbolic ritual, entertainment, journaling, and emotional-grounding experience. It does not guarantee wealth, health, protection, romance, legal outcomes, investment results, or any supernatural result.</p>
+      <p>If you are in danger, sick, in debt crisis, or facing serious emotional distress, seek qualified professional help. A small ritual can be comforting, but it is not a substitute for care.</p>
+    </section>
+  </main>
+
+  <footer>WishRite by CashProof Studio. Contact: tomwillgood@gmail.com. Overseas promotion only.</footer>
+
+  <script>
+    const canvas = document.getElementById("sky");
+    const ctx = canvas.getContext("2d");
+    const stars = [];
+    function resize(){
+      canvas.width = innerWidth * devicePixelRatio;
+      canvas.height = innerHeight * devicePixelRatio;
+      canvas.style.width = innerWidth + "px";
+      canvas.style.height = innerHeight + "px";
+      stars.length = 0;
+      for(let i=0;i<160;i++) stars.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,r:Math.random()*2+.35,a:Math.random()});
+    }
+    function draw(){
+      const g = ctx.createRadialGradient(canvas.width*.68, canvas.height*.36, 20, canvas.width*.62, canvas.height*.32, canvas.width*.75);
+      g.addColorStop(0,"#322045");g.addColorStop(.45,"#12101d");g.addColorStop(1,"#08080b");
+      ctx.fillStyle = g; ctx.fillRect(0,0,canvas.width,canvas.height);
+      stars.forEach((s,i)=>{s.a += .012 + i*.00002; ctx.globalAlpha = .25 + Math.sin(s.a)*.25; ctx.fillStyle = i%5===0 ? "#e9c46a" : "#fff2d9"; ctx.beginPath(); ctx.arc(s.x,s.y,s.r,0,Math.PI*2); ctx.fill();});
+      ctx.globalAlpha = 1;
+      requestAnimationFrame(draw);
+    }
+    addEventListener("resize", resize); resize(); draw();
+
+    const messages = {
+      prosperity:["The gate is not locked; it is waiting for a cleaner offer and a calmer hand.","Money follows the path you prepare for it. Remove one leak before asking for more rain.","Your sign is a small gold thread: follow the one task that can be completed today."],
+      health:["The blessing is not panic. It is steadiness, attention, and one kind message sent before sleep.","A quiet house protects itself through small rituals of care. Begin with water, rest, and one honest check-in.","Your sign is green light through a window: choose care over fear tonight."],
+      love:["Do not chase the echo. Speak once with warmth, then let the silence reveal its shape.","The heart asks for peace before proof. Make one gentle boundary and one generous gesture.","Your sign is rose smoke: soften the tone, not the truth."],
+      career:["The road does not need certainty today. It needs one irreversible-looking step made reversible.","Choose the door that teaches you even if it does not crown you immediately.","Your sign is a blue flame: reduce the decision to the next useful action."],
+      calm:["Tonight does not ask you to solve your whole life. It asks you to return to your body.","The mind knocks because it wants a witness. Write the worry down and let the page hold it.","Your sign is a white bowl: empty one thought before you sleep."]
+    };
+    const colors = ["candle gold","deep violet","sea green","soft rose","moon white","quiet blue"];
+    const sigils = ["✦","☾","✧","✺","◇","✶","♢"];
+    const form = document.getElementById("ritual");
+    form.addEventListener("submit", e => {
+      e.preventDefault();
+      const name = document.getElementById("name").value.trim() || "traveler";
+      const wish = document.getElementById("wish").value.trim() || "the wish I am carrying";
+      const type = document.getElementById("type").value;
+      const tone = document.getElementById("tone").value;
+      const seed = [...(name + wish + type + tone)].reduce((a,c)=>a+c.charCodeAt(0),0);
+      const msg = messages[type][seed % messages[type].length];
+      const color = colors[seed % colors.length];
+      const sigil = sigils[seed % sigils.length];
+      document.getElementById("sigil").textContent = sigil;
+      document.getElementById("oracleText").textContent = msg;
+      document.getElementById("blessing").innerHTML = `<b>Private blessing for ${escapeHtml(name)}</b><br>Your color is <b>${color}</b>. Your action: write the wish in one sentence, then do one practical thing that would make it 1% more likely. Wish named: "${escapeHtml(wish)}"`;
+      document.getElementById("result").classList.add("show");
+    });
+    document.getElementById("copyCard").addEventListener("click", async () => {
+      const text = document.getElementById("oracleText").textContent + "\n\n" + document.getElementById("blessing").innerText + "\n\nWishRite: https://tianyayiyin.github.io/wishrite/";
+      await navigator.clipboard.writeText(text).catch(()=>{});
+      document.getElementById("copyCard").textContent = "Copied";
+    });
+    function escapeHtml(s){return s.replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));}
+  </script>
+</body>
+</html>

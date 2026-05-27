@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lead Recovery Sprint - CashProof Studio</title>
+  <style>
+    :root{--bg:#0d1117;--panel:#151b23;--line:#303b49;--text:#f8fafc;--muted:#aeb8c4;--gold:#facc15;--green:#34d399;--blue:#60a5fa}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}a{color:inherit}
+    .top{display:flex;justify-content:space-between;gap:14px;align-items:center;padding:18px 6vw;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(13,17,23,.96);z-index:3}.brand{font-weight:950;text-decoration:none}.nav{display:flex;gap:10px;flex-wrap:wrap}
+    .btn{display:inline-flex;min-height:44px;align-items:center;justify-content:center;padding:0 16px;border-radius:7px;border:1px solid var(--line);text-decoration:none;font-weight:900}.primary{background:var(--gold);border-color:var(--gold);color:#171100}.secondary{background:#1f2937}
+    .hero{padding:64px 6vw 38px;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(320px,.75fr);gap:34px;align-items:center}.eyebrow{color:var(--green);font-size:13px;text-transform:uppercase;font-weight:950;letter-spacing:.08em}h1{font-size:clamp(40px,7vw,82px);line-height:.98;margin:0 0 18px}h2{font-size:clamp(28px,4vw,48px);margin:0 0 16px}h3{margin:0 0 8px}p{color:var(--muted);line-height:1.65}.lead{font-size:20px;max-width:900px}.panel,.card{background:var(--panel);border:1px solid var(--line);border-radius:8px}.panel{padding:22px}.row{padding:14px 0;border-bottom:1px solid var(--line)}.row:last-child{border-bottom:0}.row b{color:var(--text)}
+    section{padding:44px 6vw;border-top:1px solid var(--line)}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.card{padding:22px}.price{font-size:34px;font-weight:950;color:var(--gold);margin:6px 0 10px}.tag{display:inline-flex;padding:5px 9px;border:1px solid var(--line);border-radius:999px;font-size:12px;font-weight:900;color:#dbeafe}.list{display:grid;gap:10px}.list p{margin:0;padding:12px 14px;background:#0f172a;border:1px solid var(--line);border-radius:8px}.blue{color:var(--blue);font-weight:950}
+    @media(max-width:980px){.hero,.grid{grid-template-columns:1fr}.top{align-items:flex-start;flex-direction:column}.btn{width:100%}}
+  </style>
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="/">CashProof Studio</a>
+    <nav class="nav">
+      <a class="btn secondary" href="/start/">All products</a>
+      <a class="btn primary" href="/pay/?product=lead-recovery&plan=sprint">Pay / book sprint</a>
+    </nav>
+  </header>
+  <main>
+    <section class="hero">
+      <div>
+        <p class="eyebrow">For lawyers, clinics, realtors, brokers, contractors and local-service owners</p>
+        <h1>Recover missed leads before they forget you.</h1>
+        <p class="lead">Lead Recovery Sprint finds the places where inquiries, calls, DMs, forms, and old prospects are leaking revenue. You get a concrete follow-up system: scripts, message templates, a simple tracker, and a 7-day reactivation plan.</p>
+        <div class="nav">
+          <a class="btn primary" href="/pay/?product=lead-recovery&plan=sprint">Start the $99 sprint</a>
+          <a class="btn secondary" href="mailto:tomwillgood@gmail.com?subject=Lead%20Recovery%20Sprint">Send anonymized sample</a>
+        </div>
+      </div>
+      <aside class="panel">
+        <h3>What this sells</h3>
+        <div class="row"><b>More appointments:</b> follow up every inquiry with a clear next step.</div>
+        <div class="row"><b>Less manual work:</b> replace scattered DMs with a simple daily queue.</div>
+        <div class="row"><b>Sleeping leads:</b> revive old conversations without sounding desperate.</div>
+        <div class="row"><b>Lost forms/calls:</b> identify where response speed or wording loses buyers.</div>
+      </aside>
+    </section>
+
+    <section>
+      <p class="eyebrow">Packages</p>
+      <h2>Built for owners who pay for revenue, not dashboards.</h2>
+      <div class="grid">
+        <article class="card">
+          <span class="tag">First order</span>
+          <h3>Lead Leak Quick Audit</h3>
+          <p class="price">$29</p>
+          <p>Review one funnel: website form, missed-call flow, email/DM follow-up, or old lead list. Delivery: top leaks and 5 fixes.</p>
+          <a class="btn primary" href="/pay/?product=lead-recovery&plan=quick-audit">Pay $29</a>
+        </article>
+        <article class="card">
+          <span class="tag">Best offer</span>
+          <h3>7-Day Recovery Sprint</h3>
+          <p class="price">$99</p>
+          <p>We build a 7-day follow-up script pack, lead tracker, reactivation sequence, and daily operating checklist.</p>
+          <a class="btn primary" href="/pay/?product=lead-recovery&plan=sprint">Pay $99</a>
+        </article>
+        <article class="card">
+          <span class="tag">Retainer</span>
+          <h3>Monthly Lead Desk</h3>
+          <p class="price">$299</p>
+          <p>Weekly review of missed leads, scripts, objections, and follow-up improvements. Manual, high-touch delivery.</p>
+          <a class="btn primary" href="/pay/?product=lead-recovery&plan=monthly-desk">Pay $299</a>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <p class="eyebrow">What customers receive</p>
+      <div class="list">
+        <p><span class="blue">1.</span> A missed-lead map: where prospects enter, where they wait, where they disappear.</p>
+        <p><span class="blue">2.</span> Follow-up scripts for SMS, email, WhatsApp, Instagram, WeChat, or phone callbacks.</p>
+        <p><span class="blue">3.</span> A simple owner-friendly tracker: no CRM migration required.</p>
+        <p><span class="blue">4.</span> A 7-day reactivation plan for old inquiries and unbooked prospects.</p>
+        <p><span class="blue">5.</span> Clear boundaries: operational support only, no legal, medical, financial, or guaranteed-result claims.</p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

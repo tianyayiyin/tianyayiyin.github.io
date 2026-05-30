@@ -88,6 +88,10 @@
             <label for="notes">Optional anonymized notes</label>
             <textarea id="notes" placeholder="Example: Instagram DMs, website forms, missed calls, quotes sent but not booked, old lead list, no-show appointments. Do not paste private customer data."></textarea>
           </div>
+          <div class="field">
+            <label for="value">Average job / case / appointment value</label>
+            <input id="value" type="number" min="0" value="500">
+          </div>
           <button class="btn primary" id="run" type="button">Generate leak score</button>
         </div>
         <div class="card">
@@ -194,6 +198,7 @@
       const leads = Math.max(0, Number($("leads").value || 0));
       const speed = Number($("speed").value);
       const follow = Number($("follow").value);
+      const value = Math.max(0, Number($("value").value || 0));
       const notes = $("notes").value.toLowerCase();
       let risk = 18 + speed * 12 + follow * 14;
       if (leads >= 20) risk += 8;
@@ -201,6 +206,7 @@
       if (/missed|no show|ghost|quote|estimate|dm|form|call|voicemail|old lead|not booked|follow/i.test(notes)) risk += 8;
       risk = Math.min(96, risk);
       const weeklyLeak = leads ? Math.max(1, Math.round(leads * (risk / 100) * 0.28)) : 0;
+      const monthlyLeakValue = weeklyLeak * value * 4;
       const label = risk >= 75 ? "High leak risk" : risk >= 52 ? "Moderate leak risk" : "Low-to-moderate leak risk";
       const fixes = [];
       if (speed >= 3) fixes.push("1. Put every new inquiry into a same-day response queue. Speed is usually the cheapest conversion lift.");
@@ -209,7 +215,7 @@
       else fixes.push("2. Tighten the tracker: every row needs owner, next step, date, and last objection.");
       fixes.push("3. Add a 7-day sequence: day 0 fast reply, day 1 proof, day 3 objection check, day 7 soft close or reactivation.");
       $("score").textContent = risk;
-      $("scoreLabel").innerHTML = `<span class="danger">${label}</span>. Estimated missed opportunities: about ${weeklyLeak} per week.`;
+      $("scoreLabel").innerHTML = `<span class="danger">${label}</span>. Estimated missed opportunities: about ${weeklyLeak} per week. If one recovered job is worth $${value.toLocaleString()}, the visible monthly opportunity is roughly $${monthlyLeakValue.toLocaleString()} before costs.`;
       $("result").textContent = `${$("biz").value}\n\nLikely leak points:\n- First response delay\n- No clear owner for each lead\n- Quoted or interested prospects not reactivated\n\n${fixes.join("\n")}\n\nPaid next step:\n$29 audit: send anonymized funnel notes and get the top leaks + 5 fixes.\n$99 sprint: get scripts, tracker, and a 7-day recovery sequence.`;
     }
     $("run").addEventListener("click", runAudit);
